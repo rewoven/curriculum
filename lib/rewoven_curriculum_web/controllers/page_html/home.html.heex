@@ -1,0 +1,32 @@
+<.curriculum_page user={assigns[:current_user]}>
+  <section class="hero">
+    <div class="container">
+      <h1>The Rewoven <span class="highlight">Curriculum</span></h1>
+      <p>Six full courses on circular economy, fast fashion, recycling, and more — built for kids 7-14, mapped to the same topics as the multiplayer quiz.</p>
+      <div class="hero-stat">
+        <span>{length(@courses)} courses</span>
+        <span>{@total_lessons} lessons</span>
+        <span>$4.99/mo</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="courses">
+    <div class="container">
+      <div class="courses-grid">
+        <%= for course <- @courses do %>
+          <a href={"/courses/" <> course.slug} class="course-card" style={"border-top: 4px solid " <> course.color}>
+            <div class="course-emoji">{course.emoji}</div>
+            <div class="course-title">{course.title}</div>
+            <p class="course-tag">{course.tagline}</p>
+            <div class="course-meta">
+              <span><strong>{length(course.lessons)}</strong> lessons</span>
+              <span>·</span>
+              <span>End-of-lesson quizzes</span>
+            </div>
+          </a>
+        <% end %>
+      </div>
+    </div>
+  </section>
+</.curriculum_page>

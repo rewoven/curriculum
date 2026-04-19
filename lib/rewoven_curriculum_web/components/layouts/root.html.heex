@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="csrf-token" content={get_csrf_token()} />
+    <title>{assigns[:page_title] || "Rewoven Curriculum"}</title>
+    <meta name="description" content="Six full sustainability courses for kids 7-14 — premium content for Rewoven subscribers." />
+    <link rel="icon" href="https://rewovenapp.com/assets/logo.png" type="image/png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet" />
+    <link phx-track-static rel="stylesheet" href={~p"/curriculum.css"} />
+  </head>
+  <body>
+    {@inner_content}
+  </body>
+</html>

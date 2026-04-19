@@ -1,0 +1,103 @@
+<.curriculum_page user={assigns[:current_user]}>
+  <article class="lesson-page">
+    <p class="crumbs">
+      <a href="/">Curriculum</a> ·
+      <a href={"/courses/" <> @lesson.course.slug}>{@lesson.course.title}</a>
+    </p>
+    <h1>{@lesson.title}</h1>
+
+    <%= if @content do %>
+      <p class="lesson-intro">{@content.intro}</p>
+
+      <%= for section <- @content.sections do %>
+        <section class="lesson-section">
+          <h2>{section.heading}</h2>
+          <%= for paragraph <- String.split(section.body, "\n\n", trim: true) do %>
+            <p>{paragraph}</p>
+          <% end %>
+        </section>
+      <% end %>
+
+      <div class="takeaways">
+        <h3>Key takeaways</h3>
+        <ul>
+          <%= for t <- @content.key_takeaways do %>
+            <li>{t}</li>
+          <% end %>
+        </ul>
+      </div>
+
+      <h2 style="font-family:'Inter',sans-serif; font-size:22px; margin:36px 0 16px;">Try this</h2>
+      <%= for activity <- @content.activities do %>
+        <div class="activity-card">
+          <h4>{activity.title}</h4>
+          <p>{activity.description}</p>
+        </div>
+      <% end %>
+
+      <div class="end-question" id="end-question">
+        <div class="label">End-of-lesson question</div>
+        <h3>{@content.end_question.prompt}</h3>
+        <div class="q-options">
+          <%= for {option, idx} <- Enum.with_index(@content.end_question.options) do %>
+            <button
+              type="button"
+              class="q-option"
+              data-idx={idx}
+              data-correct={if idx == @content.end_question.correct, do: "true", else: "false"}>
+              <span class="q-option-letter"><%= ["A","B","C","D"] |> Enum.at(idx) %></span>
+              <span>{option}</span>
+            </button>
+          <% end %>
+        </div>
+        <p class="q-explanation" id="q-explanation">{@content.end_question.explanation}</p>
+      </div>
+    <% else %>
+      <p class="lesson-intro">This lesson is coming soon. Check back next week!</p>
+    <% end %>
+
+    <div class="lesson-nav">
+      <%= if @prev do %>
+        <a class="nav-arrow prev" href={"/courses/" <> @lesson.course.slug <> "/" <> @prev.slug}>
+          <div class="label">← Previous</div>
+          <div class="title">{@prev.title}</div>
+        </a>
+      <% else %>
+        <div class="nav-arrow prev disabled">
+          <div class="label">← Previous</div>
+          <div class="title">Start of course</div>
+        </div>
+      <% end %>
+
+      <%= if @next do %>
+        <a class="nav-arrow next" href={"/courses/" <> @lesson.course.slug <> "/" <> @next.slug}>
+          <div class="label">Next →</div>
+          <div class="title">{@next.title}</div>
+        </a>
+      <% else %>
+        <a class="nav-arrow next" href={"/courses/" <> @lesson.course.slug}>
+          <div class="label">🏆 Course complete</div>
+          <div class="title">Back to course</div>
+        </a>
+      <% end %>
+    </div>
+  </article>
+
+  <script>
+    (() => {
+      const opts = document.querySelectorAll('.q-option');
+      const explanation = document.getElementById('q-explanation');
+      opts.forEach(btn => {
+        btn.addEventListener('click', () => {
+          if (btn.classList.contains('correct') || btn.classList.contains('wrong')) return;
+          const isCorrect = btn.dataset.correct === 'true';
+          btn.classList.add(isCorrect ? 'correct' : 'wrong');
+          if (!isCorrect) {
+            opts.forEach(o => { if (o.dataset.correct === 'true') o.classList.add('correct'); });
+          }
+          if (explanation) explanation.classList.add('show');
+        });
+      });
+    })();
+  </script>
+</.curriculum_page>

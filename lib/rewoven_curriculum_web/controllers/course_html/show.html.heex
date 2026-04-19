@@ -1,0 +1,23 @@
+<.curriculum_page user={assigns[:current_user]}>
+  <section class="course-header">
+    <div class="container">
+      <p class="crumbs"><a href="/">All courses</a> · {@course.title}</p>
+      <div class="course-emoji">{@course.emoji}</div>
+      <h1>{@course.title}</h1>
+      <p>{@course.tagline}</p>
+    </div>
+  </section>
+
+  <section class="lessons-list">
+    <%= for {lesson, idx} <- Enum.with_index(@course.lessons) do %>
+      <a href={"/courses/" <> @course.slug <> "/" <> lesson.slug} class="lesson-row">
+        <div class="lesson-num">{idx + 1}</div>
+        <div class="lesson-info">
+          <div class="lesson-title">{lesson.title}</div>
+          <div class="lesson-summary">{lesson.summary}</div>
+        </div>
+        <div class="lesson-duration">{lesson.duration}</div>
+      </a>
+    <% end %>
+  </section>
+</.curriculum_page>
