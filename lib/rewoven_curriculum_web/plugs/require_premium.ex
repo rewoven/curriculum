@@ -22,6 +22,16 @@ defmodule RewovenCurriculumWeb.Plugs.RequirePremium do
   def init(opts), do: opts
 
   def call(conn, _opts) do
+    if Application.get_env(:rewoven_curriculum, :require_premium, false) do
+      enforce_premium(conn)
+    else
+      # Soft-launch / free-for-everyone mode. Still try to attach the
+      # signed-in user for personalization, but don't block anyone.
+      try_attach_user(conn)
+    end
+  end
+
+  defp enforce_premium(conn) do
     with {:ok, jwt} <- get_jwt(conn),
          {:ok, user} <- Supabase.verify_jwt(jwt),
          {:ok, profile} <- Supabase.get_profile(user["id"], jwt),
@@ -31,6 +41,17 @@ defmodule RewovenCurriculumWeb.Plugs.RequirePremium do
       |> assign(:current_profile, profile)
     else
       _ -> redirect_to_premium(conn)
+    end
+  end
+
+  defp try_attach_user(conn) do
+    case get_jwt(conn) do
+      {:ok, jwt} ->
+        case Supabase.verify_jwt(jwt) do
+          {:ok, user} -> assign(conn, :current_user, user)
+          _ -> conn
+        end
+      _ -> conn
     end
   end
 

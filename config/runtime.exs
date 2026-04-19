@@ -26,7 +26,11 @@ config :rewoven_curriculum, RewovenCurriculumWeb.Endpoint,
 # Supabase config — same project as the rest of Rewoven.
 config :rewoven_curriculum,
   supabase_url: System.get_env("SUPABASE_URL"),
-  supabase_anon_key: System.get_env("SUPABASE_ANON_KEY")
+  supabase_anon_key: System.get_env("SUPABASE_ANON_KEY"),
+  # Soft launch: when REQUIRE_PREMIUM=false (or unset), the premium gate
+  # is bypassed and everyone can read every lesson. Flip to "true" later
+  # to enable the paywall.
+  require_premium: System.get_env("REQUIRE_PREMIUM") == "true"
 
 if config_env() == :prod do
   # The secret key base is used to sign/encrypt cookies and other secrets.
