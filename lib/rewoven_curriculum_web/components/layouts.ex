@@ -23,9 +23,9 @@ defmodule RewovenCurriculumWeb.Layouts do
     ~H"""
     <nav>
       <div class="container nav-inner">
-        <a href="/" class="nav-logo">
+        <a href="https://rewovenapp.com" class="nav-logo">
           <img src="https://rewovenapp.com/assets/logo.png" alt="Rewoven" />
-          <span>Rewoven Curriculum</span>
+          <span>Rewoven</span>
         </a>
         <ul class="nav-links">
           <li><a href="https://rewovenapp.com">Home</a></li>
