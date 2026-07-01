@@ -1,8 +1,8 @@
 <.curriculum_page user={assigns[:current_user]}>
   <article class="lesson-page">
     <p class="crumbs">
-      <a href="/">Curriculum</a> ·
-      <a href={"/courses/" <> @lesson.course.slug}>{@lesson.course.title}</a>
+      <a href="/">Curriculum</a>
+      · <a href={"/courses/" <> @lesson.course.slug}>{@lesson.course.title}</a>
     </p>
     <h1>{@lesson.title}</h1>
 
@@ -27,7 +27,9 @@
         </ul>
       </div>
 
-      <h2 style="font-family:'Inter',sans-serif; font-size:22px; margin:36px 0 16px;">Try this</h2>
+      <h2 style="font-family:'Inter',sans-serif; font-size:22px; margin:36px 0 16px;">
+        Try this
+      </h2>
       <%= for activity <- @content.activities do %>
         <div class="activity-card">
           <h4>{activity.title}</h4>
@@ -44,8 +46,9 @@
               type="button"
               class="q-option"
               data-idx={idx}
-              data-correct={if idx == @content.end_question.correct, do: "true", else: "false"}>
-              <span class="q-option-letter"><%= ["A","B","C","D"] |> Enum.at(idx) %></span>
+              data-correct={if idx == @content.end_question.correct, do: "true", else: "false"}
+            >
+              <span class="q-option-letter">{["A", "B", "C", "D"] |> Enum.at(idx)}</span>
               <span>{option}</span>
             </button>
           <% end %>

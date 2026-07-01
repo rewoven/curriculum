@@ -1,6 +1,6 @@
 defmodule RewovenCurriculum.Lessons do
   @moduledoc """
-  Full content for the 24 curriculum lessons.
+  Full content for the 32 curriculum lessons.
 
   Lookup: content("circular-economy", "linear-vs-circular") →
     %{intro:, sections:, key_takeaways:, activities:, end_question:}
@@ -76,7 +76,6 @@ defmodule RewovenCurriculum.Lessons do
           "A circular economy keeps materials in use as long as possible — through reuse, repair, refurbishment and recycling — instead of treating them as disposable. The Ellen MacArthur Foundation summarises it as: design out waste, keep things in use, regenerate nature."
       }
     },
-
     {"circular-economy", "reuse-and-repair"} => %{
       intro:
         "Recycling gets all the attention, but it's actually one of the worst ways to deal with stuff. Reuse and repair beat it every time — and the math behind why is pretty wild.",
@@ -139,7 +138,6 @@ defmodule RewovenCurriculum.Lessons do
           "Reuse sits above recycling in the waste hierarchy because it skips the energy, water, and chemicals needed to break down and rebuild a product. Refilling a bottle keeps the original material in its highest-value form. Recycling is good — but it's a backup, not the goal."
       }
     },
-
     {"circular-economy", "closing-the-loop"} => %{
       intro:
         "Some companies have gone past talking about circularity and actually built it. Inside Patagonia's repair workshop, Loop's refill warehouses, and your local zero-waste store, the loop is closing — slowly, messily, but really.",
@@ -202,7 +200,6 @@ defmodule RewovenCurriculum.Lessons do
           "Worn Wear is Patagonia's circular program. They repair around 100,000 garments a year at their Reno facility, take customer trade-ins for store credit, and resell used gear at a discount. It's one of the best-known examples of a brand actively competing with itself to keep clothes in use longer."
       }
     },
-
     {"circular-economy", "design-for-circularity"} => %{
       intro:
         "Up to 80% of a product's environmental impact is locked in at the design stage — before a single tree is cut or a single drop of oil pumped. The future of sustainability isn't recycling better. It's designing differently.",
@@ -253,7 +250,8 @@ defmodule RewovenCurriculum.Lessons do
         }
       ],
       end_question: %{
-        prompt: "Roughly what percentage of a product's environmental impact is decided at the design stage?",
+        prompt:
+          "Roughly what percentage of a product's environmental impact is decided at the design stage?",
         options: ["About 20%", "About 40%", "About 80%", "About 5%"],
         correct: 2,
         explanation:
@@ -322,7 +320,6 @@ defmodule RewovenCurriculum.Lessons do
           "Shein adds around 6,000 new styles per day — far more than any traditional fashion brand. This is called 'ultra-fast fashion.' It's possible because Shein uses on-demand micro-batches: making just a few hundred units of each item, then mass-producing only the ones that go viral."
       }
     },
-
     {"fashion", "microplastics-and-polyester"} => %{
       intro:
         "Every time you wash your favourite hoodie, it sheds tiny bits of plastic into the ocean. By the end of this lesson, you'll understand exactly why — and what's actually worth doing about it.",
@@ -380,7 +377,6 @@ defmodule RewovenCurriculum.Lessons do
           "A 2016 Plymouth University study estimated around 700,000 microfibres per 6kg load of synthetic clothes. They're too small for most washing machine filters and most water treatment plants, so they end up in rivers and oceans. Washing colder, less often, and with a microfibre-catching bag are the main ways to cut shedding."
       }
     },
-
     {"fashion", "cost-per-wear"} => %{
       intro:
         "There's one math equation that quietly changes how you shop forever. It's called cost-per-wear, and once you've used it three times you can never un-see it.",
@@ -438,7 +434,6 @@ defmodule RewovenCurriculum.Lessons do
           "$120 ÷ 80 wears = $1.50 per wear. Compare this to a $30 fast-fashion jacket worn 5 times ($6.00 per wear) and you can see why cost per wear often makes 'expensive' items the better deal."
       }
     },
-
     {"fashion", "spotting-greenwashing"} => %{
       intro:
         "If a brand uses the word 'sustainable' more than 5 times on a homepage, take a second look. Greenwashing — pretending to be eco-friendly without actually being eco-friendly — is now bigger business than real sustainability.",
@@ -563,7 +558,6 @@ defmodule RewovenCurriculum.Lessons do
           "Less than 1% of clothing is recycled back into new clothing. Most discarded clothes go to landfill, get incinerated, or are shipped to second-hand markets in places like Ghana's Kantamanto market — where about 40% of arrivals are unwearable and end up in local landfills. We'll cover why true textile recycling is so hard in the Recycling course."
       }
     },
-
     {"textile-lifecycle", "why-blends-cant-be-recycled"} => %{
       intro:
         "Pick up a t-shirt and read the label. If it says '60% cotton, 40% polyester,' that shirt is almost impossible to recycle. Here's the chemistry of why.",
@@ -626,7 +620,6 @@ defmodule RewovenCurriculum.Lessons do
           "In a blended yarn, cotton and polyester fibres are physically spun together — like braids. Mechanical recycling can shred but not separate them. Chemical recycling can split them by dissolving each fibre type into different streams, but it's expensive, energy-intensive, and barely operating at industrial scale (less than 0.1% of clothing today)."
       }
     },
-
     {"textile-lifecycle", "water-footprint"} => %{
       intro:
         "It takes about 2,700 litres of water to grow the cotton for one t-shirt. That's enough drinking water for one person for almost 3 years. Where does it all go? 💧",
@@ -684,7 +677,6 @@ defmodule RewovenCurriculum.Lessons do
           "About 2,700 litres — enough drinking water for one person for nearly 3 years, or roughly 50 bathtubs. Most of that water goes to growing the cotton plant itself. Linen, hemp, and recycled cotton use a tiny fraction by comparison."
       }
     },
-
     {"textile-lifecycle", "lifecycle-lab"} => %{
       intro:
         "Time to put on a lab coat. We're going to compare four common garments side by side — a cotton tee, a polyester hoodie, a linen shirt, and a recycled fleece — and see which one really wins. 🧪",
@@ -735,8 +727,14 @@ defmodule RewovenCurriculum.Lessons do
         }
       ],
       end_question: %{
-        prompt: "Which of these typically has the LOWEST overall environmental footprint per garment?",
-        options: ["Conventional cotton t-shirt", "Virgin polyester hoodie", "Linen shirt", "Acrylic sweater"],
+        prompt:
+          "Which of these typically has the LOWEST overall environmental footprint per garment?",
+        options: [
+          "Conventional cotton t-shirt",
+          "Virgin polyester hoodie",
+          "Linen shirt",
+          "Acrylic sweater"
+        ],
         correct: 2,
         explanation:
           "Linen wins on most metrics — low water (often under 25 litres per shirt), low carbon (~2 kg CO2e), no microplastics, and fully biodegradable. The main downsides are higher upfront cost and wrinkling. For everyday shirts, dresses, and bedding, linen is one of the most sustainable choices available."
@@ -797,14 +795,14 @@ defmodule RewovenCurriculum.Lessons do
         }
       ],
       end_question: %{
-        prompt: "Which certification primarily checks that workers are paid a living wage and treated fairly?",
+        prompt:
+          "Which certification primarily checks that workers are paid a living wage and treated fairly?",
         options: ["GOTS", "OEKO-TEX", "Fair Trade", "Cradle to Cradle"],
         correct: 2,
         explanation:
           "Fair Trade certification is focused on people: living wages, no forced or child labour, safe working conditions, and a 'Fair Trade premium' paid into community funds. GOTS covers organic materials AND fair labour, OEKO-TEX is purely chemical safety, and Cradle to Cradle is about circular product design."
       }
     },
-
     {"sustainable-brands", "supply-chain-transparency"} => %{
       intro:
         "Most clothing labels are designed to tell you as little as possible. 'Made in Italy' might mean 6 countries of work, 1 of which was Italy. Welcome to the world of supply chain transparency.",
@@ -867,7 +865,6 @@ defmodule RewovenCurriculum.Lessons do
           "Tier 4 is raw material — where the actual fibre starts. Tier 1 is the final assembly factory (cut and sew), Tier 2 is fabric production, Tier 3 is yarn spinning, Tier 4 is the cotton field, oil well, or sheep farm. Most brands only know and disclose Tier 1, which is where the transparency gap begins."
       }
     },
-
     {"sustainable-brands", "impact-reports"} => %{
       intro:
         "Every big brand publishes an annual 'sustainability report' or 'impact report.' Most are 80% PR and 20% data. Here's how to spot the difference and read them like a pro.",
@@ -930,7 +927,6 @@ defmodule RewovenCurriculum.Lessons do
           "Scope 3 covers the entire value chain — manufacturing, materials, shipping, customer washing, end-of-life. For most fashion brands it's 80–95% of their total emissions. Brands that report being 'carbon neutral' often mean only Scope 1 (their offices) and Scope 2 (their electricity), which is a small fraction of the real footprint."
       }
     },
-
     {"sustainable-brands", "brand-audit-project"} => %{
       intro:
         "Time to turn detective. Pick a brand, run them through the same 5-part framework Rewoven uses to grade 500+ brands, and see what your favourites really look like under the microscope.",
@@ -1060,7 +1056,6 @@ defmodule RewovenCurriculum.Lessons do
           "Mechanical recycling shreds fabric, which physically cuts the fibres shorter — so recycled material is weaker and usually has to be blended with virgin material. Chemical recycling dissolves fabric down to its molecules, which can then be rebuilt into virgin-quality fibre. Chemical is more powerful but expensive and energy-intensive."
       }
     },
-
     {"recycling", "sorting-problems"} => %{
       intro:
         "When you donate clothes, you probably picture a kid trying them on. The reality is far weirder — most donated clothes never get worn again, and many end up in landfills 5,000 miles away.",
@@ -1118,7 +1113,6 @@ defmodule RewovenCurriculum.Lessons do
           "Around 15 million used garments arrive at Kantamanto Market in Accra every week — mostly shipped from the US, UK, Canada, and EU. About 40% of these clothes are unsellable junk that ends up in Ghana's overflowing landfills, on beaches, or in the ocean."
       }
     },
-
     {"recycling", "fibre-shortening"} => %{
       intro:
         "Every time a shirt is mechanically recycled, the fibres get shorter. After a few cycles, they're too short to make new clothes. Here's the science of why — and the hack the industry uses to get around it.",
@@ -1181,7 +1175,6 @@ defmodule RewovenCurriculum.Lessons do
           "Mechanical recycling physically cuts cotton fibres shorter each time. To make a strong yarn, the short recycled fibres are mixed with longer virgin fibres that act as a skeleton. Chemical recycling avoids this by dissolving the fibres back to molecules — but it's expensive and only a tiny fraction of recycled cotton today comes from chemical processes."
       }
     },
-
     {"recycling", "design-a-recycling-system"} => %{
       intro:
         "Most cities don't have a real textile recycling pipeline. In this lesson, you'll design one from scratch — collection, sorting, processing, output — for a city of your choice.",
@@ -1299,14 +1292,14 @@ defmodule RewovenCurriculum.Lessons do
         }
       ],
       end_question: %{
-        prompt: "On average, what percentage of an average wardrobe goes unworn for at least a year?",
+        prompt:
+          "On average, what percentage of an average wardrobe goes unworn for at least a year?",
         options: ["About 10%", "About 30%", "About 60%", "About 90%"],
         correct: 2,
         explanation:
           "About 60% of an average wardrobe is unworn — repeatedly confirmed by WRAP in the UK and ThredUp's annual reports. That means more than half of every clothing dollar is wasted, and a huge backlog of water, carbon, and labour sits unused on hangers."
       }
     },
-
     {"sustainable-lifestyle", "swap-donate-upcycle"} => %{
       intro:
         "When you're done with a garment, you've got 3 main options to extend its life: swap, donate, or upcycle. Each works for different things — and choosing right matters more than you'd think.",
@@ -1357,7 +1350,8 @@ defmodule RewovenCurriculum.Lessons do
         }
       ],
       end_question: %{
-        prompt: "Which option is usually BEST for a garment that's still in style and good condition but you don't wear?",
+        prompt:
+          "Which option is usually BEST for a garment that's still in style and good condition but you don't wear?",
         options: [
           "Throw it in a generic donation bin",
           "Swap or sell it directly so the next user actually wants it",
@@ -1369,7 +1363,6 @@ defmodule RewovenCurriculum.Lessons do
           "Swapping or selling matches the garment to someone who actively wants it — which is what 'reuse' actually means. A generic donation bin often ships unsorted clothes abroad, where 40%+ end up in landfills. Upcycling is great for items with problems, but a perfectly good garment doesn't need transformation — it just needs a new owner."
       }
     },
-
     {"sustainable-lifestyle", "eco-habits-tracker"} => %{
       intro:
         "Big system change matters. So do small daily habits — and 10 small ones, done consistently, can save around 2 tonnes of CO2 a year per person. Here are the 10 worth tracking. 🌱",
@@ -1432,7 +1425,6 @@ defmodule RewovenCurriculum.Lessons do
           "Replacing short car trips with walking, biking, or public transit can save around 500 kg of CO2 per year if done a few times a week. That's far more than plastic straws or LED bulbs (still good!) or reusable bottles. The biggest individual levers are transportation, meat consumption, clothing, and home energy."
       }
     },
-
     {"sustainable-lifestyle", "thirty-day-challenge"} => %{
       intro:
         "Thirty days, thirty actions. One small move per day, building habits that stick long after the calendar ends. Here's the structure of the challenge — print it, share it, do it.",
@@ -1493,6 +1485,517 @@ defmodule RewovenCurriculum.Lessons do
         correct: 1,
         explanation:
           "The point isn't perfection — it's planting durable habits. Studies show new behaviours need 21–66 days of repetition to become automatic. 30 days is enough to lock in several. Aim for 80% completion and pick 3–5 habits to carry past day 30. Those long-term changes are the real win."
+      }
+    },
+
+    # =====================================================================
+    # COURSE 7: THE PEOPLE BEHIND OUR CLOTHES
+    # =====================================================================
+
+    {"people-behind-clothes", "who-made-my-clothes"} => %{
+      intro:
+        "Somewhere right now, a person you'll never meet is sewing a shirt that might end up in your closet. This lesson is about finding out who they are — and why one simple question can shake an entire industry. 🧵",
+      sections: [
+        %{
+          heading: "The Biggest Team You've Never Met",
+          body:
+            "Grab the nearest T-shirt and check the label. It'll tell you where the shirt was made — but not a single thing about who made it. That's strange, because a real person guided that fabric through a sewing machine. Someone with a name, a family, and probably a favourite song.\n\nThe International Labour Organization (the UN's agency for work and jobs) estimates that between 60 and 75 million people work in the global textile, clothing and footwear industry. That's close to the population of the whole UK — an entire country's worth of people, sewing.\n\nAnd here's the part that surprises most shoppers: the large majority of them are women, most of them young. Campaign groups like the Clean Clothes Campaign put the figure at roughly three in four. Many are in their late teens or twenties — not much older than you.\n\nSo the person who made your hoodie probably isn't a robot or a mysterious machine. She's more likely a young woman on a sewing line, one of millions, doing skilled work at serious speed. This lesson is about making her visible."
+        },
+        %{
+          heading: "The World Map Inside Your Wardrobe",
+          body:
+            "If you flipped every label in your closet, you'd end up with a pretty good geography quiz. China still makes more clothing than any other country. Bangladesh and Vietnam usually come next, followed by big producers like India, Turkey, and Cambodia, with newer hubs in Africa and Southeast Asia appearing as brands hunt for lower costs.\n\nSome of these places depend on clothing in a huge way. In Bangladesh, garments make up over 80% of everything the country exports, and the industry employs around four million people. Whole neighbourhoods of Dhaka, the capital, wake up every morning to make clothes for shoppers on the other side of the world.\n\nNext time you're in Dubai Mall — home to more than 1,200 shops — remember that almost nothing on those racks was made nearby. Most of it travelled by ship and truck from factories thousands of kilometres away.\n\nWhy those countries? Wages are lower, workforces are large, and governments have built whole economies around exporting clothes. That's brought real benefits — millions of jobs, especially for women — but it also means the people making our clothes live very far from the people wearing them. And distance makes people easy to forget."
+        },
+        %{
+          heading: "A Day on the Sewing Line",
+          body:
+            "So what's it actually like inside a garment factory? Picture a huge, bright hall filled with hundreds of sewing machines arranged in long lines. Each worker does one small job — attaching a collar, hemming a sleeve, sewing a pocket — over and over, hundreds of times a shift. The garment moves down the line, getting more finished at every station.\n\nIt's genuinely skilled work. An experienced machinist can sew a perfect seam in seconds, and each line has hourly targets to hit. Shifts often run eight to ten hours, longer in busy seasons before big shopping events. There are lunch breaks, friendships, jokes shouted across the machines — and pay day, which for many young women is the first money they've ever earned themselves, often supporting parents or paying a sibling's school fees.\n\nIt's not all hopeful, though. In many garment hubs, wages sit below what researchers call a living wage, and overtime can be exhausting.\n\nHere's the odd part: you'll never see any of this. Brands almost never print factory names on labels, and many still don't publish full factory lists at all. The sewing line stays invisible — unless somebody asks."
+        },
+        %{
+          heading: "Ask the Question: #WhoMadeMyClothes",
+          body:
+            "On 24 April 2013, the Rana Plaza building collapsed in Dhaka, Bangladesh, killing more than 1,100 garment workers. People around the world suddenly realised they had no idea who made their clothes — and two designers, Carry Somers and Orsola de Castro, founded Fashion Revolution to change that. Their campaign asks brands one simple question: who made my clothes?\n\nEvery April, during Fashion Revolution Week, people post photos of their clothing labels and tag the brand with #WhoMadeMyClothes. Some brands now reply with photos of real workers saying \"I made your clothes.\" It works because it's polite, public, and hard to ignore.\n\nYou can start this week:\n\n1. Pick one item you're wearing and find the brand's social account or contact page.\n2. Ask, politely and publicly: \"I love this hoodie — who made it?\"\n3. Check whether the brand publishes a factory list on its website. Transparency is a choice.\n\nIf you use the Rewoven app, scan the label first and look at the brand's Labor and Transparency grades — you'll sound like you've done your homework, because you have.\n\nOne question from one student is easy to skip. The same question from thousands of students isn't."
+        }
+      ],
+      key_takeaways: [
+        "Between 60 and 75 million people work in the global clothing industry, and roughly three in four are women — most of them young.",
+        "Most clothes are made in countries like China, Bangladesh, Vietnam, India, Turkey, and Cambodia, far from the malls where they're sold.",
+        "Garment work is fast, skilled, and often a young woman's first paid job — but wages frequently fall below a living wage.",
+        "Garment workers stay invisible mainly because brands choose not to share factory information, not because sharing is impossible.",
+        "The #WhoMadeMyClothes campaign, born after the 2013 Rana Plaza collapse, shows that ordinary shoppers asking one question can push brands to answer."
+      ],
+      activities: [
+        %{
+          title: "Wardrobe World Map",
+          description:
+            "Pick 15 items from your closet and flip every label. Tally up the countries, then find each one on a map (paper or phone). Before you start, write down a guess for which country will appear most — most people get it wrong."
+        },
+        %{
+          title: "The Dinner Table Label Check",
+          description:
+            "At your next family meal, ask everyone to guess who made the clothes they're wearing right now, then check the labels together. Share one fact from this lesson — the 60-75 million workers is a good one — and ask whether anyone has ever thought about the person behind the label. See where the conversation goes."
+        },
+        %{
+          title: "Draft the Question",
+          description:
+            "With a friend, choose one favourite item of clothing each and write a short, polite message to the brand asking who made it and whether they publish a factory list. Send it through the brand's contact form or save it to post during Fashion Revolution Week in April. Compare any replies you get — silence is an answer too."
+        }
+      ],
+      end_question: %{
+        prompt: "Why did the Fashion Revolution movement start in 2013?",
+        options: [
+          "A famous designer wanted more people to buy handmade clothes",
+          "The Rana Plaza factory building collapsed in Bangladesh, killing more than 1,100 garment workers",
+          "A new law forced brands to publish their factory lists",
+          "Sewing machines briefly went out of fashion"
+        ],
+        correct: 1,
+        explanation:
+          "Fashion Revolution was founded by designers Carry Somers and Orsola de Castro after the Rana Plaza collapse in Dhaka on 24 April 2013. The disaster revealed how little shoppers — and even brands themselves — knew about who made their clothes, so the movement created #WhoMadeMyClothes to demand that information out loud."
+      }
+    },
+    {"people-behind-clothes", "true-cost-of-cheap"} => %{
+      intro:
+        "Take a $10 t-shirt and slice its price like a pizza: the shop gets a huge slab, the brand gets a generous wedge, and the person who actually sewed it gets... the crumbs. Let's follow the money. 🍕",
+      sections: [
+        %{
+          heading: "Follow the Money on a $10 T-Shirt",
+          body:
+            "Grab a mental calculator. A basic fast-fashion t-shirt might cost $10 in a Dubai mall or on a shopping app. Where does that money actually go?\n\nRoughly speaking, the biggest slice — often around half — covers retail: the shop's rent, staff, marketing, and profit. Then come the brand's profit margin, shipping and import costs, and the fabric itself, which is usually the largest production expense. By the time you reach the person who actually sewed your shirt, there's almost nothing left.\n\nThe Clean Clothes Campaign, a network of garment-worker rights groups, famously broke down a €29 t-shirt and estimated that the worker who made it received about 18 cents — roughly 0.6% of the price. Across the industry, worker wages are commonly estimated at just 1-3% of what you pay at the till.\n\nHere's the twist: that percentage barely changes whether the shirt costs $10 or $50. A bigger price tag usually buys a bigger logo and a bigger markup, not automatically a better-paid worker. So 'expensive' and 'ethical' aren't the same thing — which is exactly why the numbers matter more than the vibes."
+        },
+        %{
+          heading: "The Gap Nobody Prints on the Label",
+          body:
+            "A minimum wage is the lowest pay a government legally allows. A living wage is what a person actually needs for food, rent, transport, healthcare, and a little left over for emergencies. In many garment-producing countries, there's a canyon between the two.\n\nTake Bangladesh, one of the world's biggest clothing exporters. In late 2023, its garment minimum wage was raised to 12,500 taka a month — roughly $110. Unions had asked for nearly double that, arguing the new figure still couldn't cover basic living costs for a family. Groups like the Global Living Wage Coalition consistently estimate living wages well above legal minimums across the region.\n\nIt gets tougher. Many workers are paid piece rates — a few cents per seam or collar — so a slow day means a smaller paycheque. To hit targets, long hours and unpaid overtime are common. And when the Clean Clothes Campaign surveyed major brands for its 2020 Fashion Checker project, it found that 93% of them couldn't show that any workers in their supply chains earned a living wage.\n\nNone of this happens because workers lack skill. It happens because brands squeeze factories on price, and factories pass that squeeze down to the sewing machines."
+        },
+        %{
+          heading: "So Why Does 'Made Ethically' Cost More?",
+          body:
+            "Here's the question everyone asks: if wages are such a tiny slice, why are ethical brands more expensive?\n\nPart of it is scale. A small ethical label making 500 shirts pays far more per shirt for fabric, printing, and shipping than a giant ordering 500,000. Add the cost of certifications like Fairtrade, independent factory audits, and better-quality materials, and the price climbs — for reasons that mostly aren't about wages at all.\n\nBecause here's the wild part: the wage fix itself is cheap. Oxfam Australia's 'What She Makes' report, with research by Deloitte in 2017, estimated that only around 4% of the price of clothing sold in Australia reached the workers who made it — and that paying them a full living wage would add roughly 1% to the retail price. On a $10 t-shirt, that's about ten cents.\n\nTen cents. Less than the cheapest thing in any vending machine you've ever seen. The barrier isn't that shoppers can't afford ethical wages — it's that brands compete so hard on price that nobody wants to blink first. Which means pressure from customers, even young ones, genuinely matters."
+        },
+        %{
+          heading: "What You Can Actually Do",
+          body:
+            "You don't need a salary to change how this works. You need a habit or two.\n\nStart with cost-per-wear: divide an item's price by the number of times you'll realistically wear it. A $40 hoodie worn 80 times costs 50 cents a wear; a $15 party top worn twice costs $7.50 a wear. Suddenly the 'cheap' option isn't cheap — and 'buy less, but better' stops being a slogan and becomes maths.\n\nSecond, ask questions. Fashion Revolution, the movement founded after the Rana Plaza factory collapse in 2013, encourages people to ask brands #WhoMadeMyClothes — and brands really do track those messages. A polite DM asking 'do you pay garment workers a living wage?' takes 30 seconds.\n\nThird, check before you buy. The Rewoven app lets you scan a clothing label and see the brand's grades, including Labor — a quick way to spot who's actually paying fairly.\n\nNone of this requires being perfect. It requires being the kind of shopper brands notice: one who counts wears, asks about wages, and knows exactly where the ten cents should go."
+        }
+      ],
+      key_takeaways: [
+        "Only around 1-3% of a cheap t-shirt's price typically reaches the worker who sewed it.",
+        "A minimum wage is what's legal; a living wage is what's enough — and in most garment-producing countries there's a wide gap between the two.",
+        "A higher price tag doesn't automatically mean a better-paid worker; the wage slice barely changes between cheap and pricey brands.",
+        "Research for Oxfam found that paying garment workers a living wage could add roughly 1% to a garment's retail price — about ten cents on a $10 shirt.",
+        "Cost-per-wear maths — fewer, better clothes worn many times — is the easiest power move a student shopper has."
+      ],
+      activities: [
+        %{
+          title: "T-Shirt Money Map",
+          description:
+            "Pick a t-shirt you own and find (or guess) its price. Draw a pie chart splitting that price between materials, factory costs, shipping, brand profit, retail, and the worker's wages. Then look up the Clean Clothes Campaign's famous €29 t-shirt breakdown and compare — how close was your guess for the worker's slice?"
+        },
+        %{
+          title: "The Dinner Table Price Check",
+          description:
+            "Over dinner, ask your family or friends to guess how much of a $10 t-shirt's price goes to the person who sewed it. Reveal the real answer — around 1-3% — and then ask the follow-up: would you pay ten cents more per shirt to close the gap? Notice which answers surprise people the most."
+        },
+        %{
+          title: "Cost-Per-Wear Audit",
+          description:
+            "Choose five items from your wardrobe and estimate how many times you've worn each one. Divide each item's price by its wear count to find your real cost per wear. Crown your best-value item — it's probably not the cheapest thing you own."
+        }
+      ],
+      end_question: %{
+        prompt:
+          "Roughly what share of a typical cheap t-shirt's retail price ends up as wages for the worker who sewed it?",
+        options: [
+          "Around 1-3%",
+          "Around 25%",
+          "Around half",
+          "Almost all of it — a t-shirt is basically a salary with sleeves"
+        ],
+        correct: 0,
+        explanation:
+          "Studies like the Clean Clothes Campaign's breakdown of a €29 t-shirt consistently put garment-worker wages at roughly 1-3% of the retail price — sometimes under 1%. Most of your money goes to retail costs, brand profit, and materials, which is why paying a living wage would barely change the price tag."
+      }
+    },
+    {"people-behind-clothes", "rana-plaza"} => %{
+      intro:
+        "On 24 April 2013, an eight-storey factory building outside Dhaka, Bangladesh collapsed with thousands of workers inside — workers who had pointed at the cracks in the walls just the day before. This is the story of the day fashion changed, and the people who made sure it couldn't be forgotten.",
+      sections: [
+        %{
+          heading: "The Cracks Everyone Saw",
+          body:
+            "On 23 April 2013, workers at Rana Plaza — an eight-storey building in Savar, on the edge of Dhaka, Bangladesh — spotted large cracks in the walls. An engineer looked at them and warned that the building wasn't safe. The bank and the shops on the lower floors closed and sent everyone home.\n\nThe five garment factories on the upper floors didn't. The next morning, workers were told to go back inside. Some later said managers threatened to hold back a month's pay if they refused. For someone supporting a family on a garment wage, that's not really a choice.\n\nJust before 9 a.m. on 24 April, the power cut out and the building's heavy generators rumbled on. Within about ninety seconds, Rana Plaza collapsed. In the end, 1,134 people died and more than 2,500 were injured. Most of them were young women.\n\nThe building had been designed for shops and offices, not for thousands of sewing machines and generators — and extra floors had been added illegally. It remains the deadliest disaster in the history of the garment industry."
+        },
+        %{
+          heading: "What Changed Almost Overnight",
+          body:
+            "As rescuers dug through the rubble, they kept finding clothing labels people recognised — reports at the time linked around 29 Western brands to the factories inside, including Primark, Mango and Benetton. These weren't mystery clothes. They were headed for ordinary shops, the same kinds you'd find in any mall from London to Dubai.\n\nThe outrage moved fast. Within weeks, brands and trade unions signed the Accord on Fire and Building Safety in Bangladesh. Unlike earlier voluntary promises, the Accord was legally binding: over 200 brands eventually signed, agreeing to fund independent safety inspections covering roughly 1,600 factories and more than two million workers. Inspectors found and fixed tens of thousands of hazards — blocked fire exits, faulty wiring, cracked columns.\n\nThat same year, designers Carry Somers and Orsola de Castro founded Fashion Revolution, a campaign built around one simple question to brands: who made my clothes?\n\nSince then, Fashion Revolution's annual Transparency Index has pushed big brands to publish lists of the factories they use — something almost none of them did before 2013. It turns out a lot can change when the whole world is watching."
+        },
+        %{
+          heading: "What Still Hasn't Changed",
+          body:
+            "Here's the honest part: not everything got fixed.\n\nCompensation for survivors and families was painfully slow. The Rana Plaza Donors Trust Fund, set up with the International Labour Organization, only reached its US$30 million target in June 2015 — more than two years after the collapse, and only after sustained public pressure on brands to pay in.\n\nWages are still low. Bangladesh raised its minimum wage for garment workers in late 2023 to 12,500 taka a month — roughly US$113 — after protests in which workers argued it still wasn't enough to live on.\n\nTransparency has improved, but it's far from complete. Fashion Revolution's Transparency Index has found, year after year, that most major brands publish less than half the information it asks for, and plenty still won't say exactly where their clothes are made.\n\nAnd fashion itself has sped up. Ultra-fast online brands now release thousands of new styles a week, which keeps squeezing the factories — and the people — at the bottom of the chain. Safer buildings matter enormously. But a safe building doesn't automatically mean fair pay or reasonable hours."
+        },
+        %{
+          heading: "Why We Remember — and How You Can Join In",
+          body:
+            "Every April, around the anniversary of the collapse, Fashion Revolution runs Fashion Revolution Week in dozens of countries. People post a photo of their clothing label and ask the brand directly: #WhoMadeMyClothes? It sounds small, but it's the same kind of pressure that got the Accord signed and supplier lists published — attention, multiplied.\n\nYou can join in from anywhere, including Dubai, where the malls carry the exact same global brands. Flip a label. If it says 'Made in Bangladesh', there's a good chance it passed through the hands of a young woman not much older than you.\n\nHere's what remembering looks like in practice:\n1. Take part in Fashion Revolution Week each April — post, email, or simply ask a brand who made your clothes.\n2. When you shop, check how a brand treats its workers. The Rewoven app lets you scan a clothing label and see the brand's Labor grade alongside its other scores.\n3. Tell someone the Rana Plaza story. Most people have never heard it.\n\nThe workers who reported those cracks were ignored. Remembering them is how we make sure nobody gets ignored like that again."
+        }
+      ],
+      key_takeaways: [
+        "On 24 April 2013, the Rana Plaza building collapsed near Dhaka, Bangladesh, killing 1,134 people — the deadliest disaster in garment industry history.",
+        "Workers reported cracks in the building the day before, but the garment factories sent them back in anyway.",
+        "The disaster led to the Bangladesh Accord: a legally binding safety agreement where over 200 brands funded independent inspections of around 1,600 factories.",
+        "Fashion Revolution was founded in 2013 and asks brands one powerful question every April: #WhoMadeMyClothes?",
+        "Factory buildings in Bangladesh are far safer now, but low wages and patchy transparency haven't gone away — which is exactly why remembering matters."
+      ],
+      activities: [
+        %{
+          title: "Label Map",
+          description:
+            "Pull ten items of clothing from your wardrobe and write down the country on each label. Find each one on a map and see how far your clothes have travelled. Count how many say 'Made in Bangladesh' — each of those labels was sewn in by a real person, most likely a young woman."
+        },
+        %{
+          title: "The Dinner-Table Question",
+          description:
+            "Over dinner, tell your family the Rana Plaza story in two minutes: the cracks, the collapse, the Accord. Then ask everyone whether they've ever wondered who made the clothes they're wearing right now. Compare answers — you might be surprised how few people have heard of the biggest disaster in fashion history."
+        },
+        %{
+          title: "Write the Question",
+          description:
+            "Pick one brand you or your friends wear a lot. Find its customer email or social media and, with a parent's okay, send the Fashion Revolution question: 'Who made my clothes?' Keep any reply you get — and remember that during Fashion Revolution Week each April, thousands of people around the world are asking the exact same thing."
+        }
+      ],
+      end_question: %{
+        prompt:
+          "After Rana Plaza, brands signed the Bangladesh Accord. What made it different from earlier safety promises?",
+        options: [
+          "It was legally binding, and brands had to fund independent factory inspections",
+          "It banned clothing production in Bangladesh completely",
+          "It was a friendly handshake deal with no actual rules",
+          "It only applied to factories that brands owned directly"
+        ],
+        correct: 0,
+        explanation:
+          "Voluntary codes of conduct existed before 2013, but they hadn't stopped disasters like Rana Plaza. The Accord was different because it was legally binding: over 200 brands signed and paid for independent inspections of roughly 1,600 factories, which found and fixed tens of thousands of safety hazards."
+      }
+    },
+    {"people-behind-clothes", "reading-labor-scores"} => %{
+      intro:
+        "A hoodie tag will happily tell you it's 60% cotton, but it won't tell you whether the person who sewed it earned enough to live on. Time to learn how to find out anyway — no detective licence required. 🕵️",
+      sections: [
+        %{
+          heading: "The Badge Collection, Decoded",
+          body:
+            "When a brand wants to prove its factories treat workers well, it usually points to a certification — a badge from an independent organisation that inspected the factory. Four names come up constantly, so let's decode them.\n\nFairtrade began with food like coffee and bananas, and now covers cotton and some garment factories. It guarantees producers a minimum price plus a 'premium' — extra money that worker communities vote on how to spend.\n\nSA8000, run by Social Accountability International since 1997, is one of the strictest factory standards out there. It's built on International Labour Organization conventions and covers child labour, forced labour, safety, working hours and the right to join a union.\n\nFair Wear Foundation works differently: brands join as members, and Fair Wear grades them every year on how hard they actually push their factories to improve. It rates brands, not products.\n\nWRAP — Worldwide Responsible Accredited Production — certifies individual factories at silver, gold or platinum levels. (Confusingly, it shares a name with WRAP, the UK waste research charity. Totally different organisation.)\n\nHere's the key thing: each badge means somebody independent actually looked. That alone puts a brand ahead of one showing you nothing."
+        },
+        %{
+          heading: "What the Badges Can't See",
+          body:
+            "Here's the catch: a certification is a snapshot, not a livestream. Many factory audits are announced in advance, which gives managers time to tidy up, coach workers on what to say, and hide the real paperwork. Investigators have repeatedly documented 'double books' — one set of records for the auditor, another showing the true hours and wages.\n\nCertificates also usually cover only the final sewing factory — 'tier one' in industry-speak. The fabric mill, the dye house and the cotton farm behind it often go unchecked.\n\nSo the stronger test is what a brand publishes itself. Three things matter most:\n\n1. A supplier list — real factory names and addresses. Fashion Revolution's 2023 Fashion Transparency Index found only about half of the world's 250 biggest fashion brands publish theirs.\n\n2. A living-wage commitment with actual numbers and deadlines. The same index found that 99% of major brands don't disclose how many workers in their supply chain earn a living wage.\n\n3. Published audit results — including problems found and fixed. A brand claiming zero issues across hundreds of factories isn't spotless; it's probably just not looking very hard."
+        },
+        %{
+          heading: "Spotting the Red Flags",
+          body:
+            "Once you know what good reporting looks like, weak reporting starts jumping out at you.\n\nRed flag one: vague 'code of conduct' language. Nearly every brand has a page saying suppliers 'must respect workers' rights.' That's a wish, not evidence. The real questions: who checks, how often, and what happens when a factory fails?\n\nRed flag two: no factory list. If a brand won't say where its clothes are made, nobody — not journalists, not unions, not you — can check its claims.\n\nRed flag three: no wage data. Words like 'fair wages' without a single number usually mean workers earn the legal minimum, which campaigners such as the Clean Clothes Campaign estimate is often around half of a real living wage, or less, in major garment-producing countries.\n\nRed flag four: all photos, no numbers. Smiling workers in bright rooms tell you what the photographer saw on photo day — nothing more.\n\nThis is exactly the homework the Rewoven app does for you: its Labour pillar pulls certifications, supplier transparency, wage commitments and audit disclosure into one grade, so scanning a label shows you in seconds how a brand measures up."
+        },
+        %{
+          heading: "Your Five-Minute Brand Check",
+          body:
+            "You don't need a detective licence — just a phone and five minutes. Next time a brand catches your eye, whether you're wandering Dubai Mall or scrolling an online store, try this:\n\nMinute 1: Search the brand's name plus 'supplier list'. A real list with factory names and countries is a great sign. Nothing at all? Strike one.\n\nMinute 2: Search the brand plus 'living wage'. You're hunting for numbers and deadlines, not just the word 'fair'.\n\nMinute 3: Skim the brand's sustainability page for certifications — SA8000, Fair Wear membership, WRAP. Remember: they're a floor, not a ceiling.\n\nMinute 4: Look the brand up in Fashion Revolution's free Fashion Transparency Index, or on Fashion Checker, a wage-tracking site run by the Clean Clothes Campaign.\n\nMinute 5: Make your call. Lots of specifics and published data? Promising. Vague promises and stock photos? Be suspicious.\n\nYou won't reach courtroom-level certainty in five minutes, and that's fine. The goal isn't a perfect wardrobe — it's becoming the kind of shopper brands can't fool. When enough of us start asking 'where's your factory list?', brands genuinely notice."
+        }
+      ],
+      key_takeaways: [
+        "Certifications like SA8000, Fair Wear and WRAP mean an independent group checked — but audits are snapshots, often announced in advance.",
+        "A published supplier list with real factory names is one of the strongest signs a brand has nothing to hide.",
+        "Fashion Revolution found only about half of the biggest fashion brands publish supplier lists — and 99% don't disclose living-wage data.",
+        "Vague 'code of conduct' language without numbers, lists or audit results is a red flag, not reassurance.",
+        "A five-minute search tells you more about a brand's labour record than any ad campaign ever will."
+      ],
+      activities: [
+        %{
+          title: "Two-Brand Face-Off",
+          description:
+            "Pick two brands from your own wardrobe — one big global name, one smaller — and run the five-minute check on both. Make a simple scorecard: supplier list (yes/no), wage data (yes/no), certifications (which ones). Compare the results; the winner often surprises people."
+        },
+        %{
+          title: "Family Label Detective Night",
+          description:
+            "Grab five garments from around the house and ask a parent or sibling to guess which of the brands publish their factory lists. Then look up the real answers together and talk about it: did the brands your family trusts most turn out to be the most open? It's a great conversation about why we assume our favourite brands are the good ones."
+        },
+        %{
+          title: "Rewrite the Code",
+          description:
+            "Find a real brand's 'code of conduct' or supplier policy page online. Highlight every vague phrase — 'we expect', 'strive to', 'where possible' — then rewrite one paragraph as if you were a strict teacher, adding measurable commitments: numbers, deadlines, consequences. Notice how different it sounds."
+        }
+      ],
+      end_question: %{
+        prompt:
+          "A brand's website says only: 'We expect all our suppliers to treat workers fairly and with respect.' Why is this weak evidence of good labour practices?",
+        options: [
+          "It contains nothing you can verify — no factory list, no wage numbers, no audit results",
+          "It's far too short — serious labour policies have to be at least 50 pages long",
+          "Companies aren't legally allowed to publish statements about their suppliers",
+          "It proves the brand has failed every certification it applied for"
+        ],
+        correct: 0,
+        explanation:
+          "'Expecting' fair treatment is a wish, not proof — anyone can write that sentence in ten seconds. Without factory names, wage data or audit results, there's no way for anyone to check whether it's true. And length isn't the issue: a 50-page policy can be just as vague as one line."
+      }
+    },
+
+    # =====================================================================
+    # COURSE 8: ANIMALS & FASHION
+    # =====================================================================
+
+    {"animals-and-fashion", "materials-from-animals"} => %{
+      intro:
+        "Check the labels on your clothes and there's a good chance an animal helped make at least one of them — a sheep, a goat, maybe thousands of silkworms. This lesson is your map of where every animal material actually comes from; later lessons will zoom in on each one. 🐑",
+      sections: [
+        %{
+          heading: "Leather and wool: the big two",
+          body:
+            "Start with leather, the one you probably see most. Most leather comes from cows, and most of the time it's a by-product — or more precisely a co-product — of the meat and dairy industries. The animal was raised mainly for beef or milk, and the hide is sold on to tanneries rather than thrown away. The UN's Food and Agriculture Organization tracks hides and skins as part of the global livestock trade for exactly this reason.\n\nBut 'mostly a by-product' isn't 'always'. Exotic leathers — crocodile, snake, ostrich — often come from animals farmed primarily for their skins. Same word on the label, very different story behind it.\n\nWool works completely differently: the animal stays alive. Sheep are sheared, usually once a year, and the fleece grows back — a bit like a very serious haircut. Australia is one of the world's biggest wool producers — the biggest for the fine merino wool used in clothing — and industry figures put it at roughly a quarter of global supply. Shearing doesn't have to hurt the sheep, though how carefully it's done varies a lot from farm to farm. That's a story for a later lesson."
+        },
+        %{
+          heading: "Silk and down: softer than they sound",
+          body:
+            "Silk begins with a caterpillar. The silkworm spins its cocoon from a single continuous thread that can run for hundreds of metres. And here's the part that surprises almost everyone: in conventional silk production, the cocoons are boiled or steamed with the pupa still inside. Why? Because if the moth were allowed to emerge, it would chew through the cocoon and snap that one long thread into short pieces. It takes thousands of cocoons to make a single kilogram of raw silk, and China and India together produce the vast majority of the world's supply. There is an alternative — 'peace silk', also called Ahimsa silk — where the moth emerges first, but the fibres come out shorter and the fabric costs more.\n\nDown is the soft under-layer of feathers that keeps ducks and geese warm, which is exactly why it fills winter jackets and duvets. Most down is collected after birds have been processed for meat, making it another co-product. But investigations have documented live-plucking on some farms, which is why the Responsible Down Standard — run by the nonprofit Textile Exchange — bans live-plucking and force-feeding in certified supply chains."
+        },
+        %{
+          heading: "Cashmere and fur: where it gets complicated",
+          body:
+            "Cashmere is the downy winter under-layer of certain goats, combed or sheared out in spring, mostly in China and Mongolia. Each goat produces so little usable fibre that it can take the annual harvest from around four goats to make one jumper. When cashmere got cheap in the 2000s and demand soared, herders responded the way you'd expect: with a lot more goats. The trouble is that goats graze harshly — they pull plants up by the roots — and UN-backed environmental assessments have found that a majority of Mongolia's grasslands now show degradation, with overgrazing a major driver.\n\nFur is the odd one out on this list: mink, foxes and raccoon dogs on fur farms are raised for one thing only — their coats. That's a big part of why it's the most heavily restricted material in fashion. The UK passed a law banning fur farming back in 2000, more than twenty European countries have since banned it or are phasing it out (the Fur Free Alliance keeps a running list), and in 2021 Israel became the first country to ban fur sales almost entirely. Major fashion houses, including Gucci and Prada, have dropped fur too."
+        },
+        %{
+          heading: "Become a label detective",
+          body:
+            "Here's the practical bit: every garment has a fibre content label sewn inside, and in most countries — the UAE included — listing the materials is a legal requirement. Flip the tag and you'll see percentages: '100% cotton' means no animal materials; '70% wool, 30% polyamide' means sheep were involved.\n\nA few decoding tips. 'Merino' and 'lambswool' are both wool. 'Genuine leather' means real animal hide. 'Satin' is a weave, not a fibre — satin is often polyester, while real silk will actually say silk. Down jackets should say 'down' or 'feather'; 'polyfill' or 'wadding: 100% polyester' means synthetic. Logos like RDS (down) or RWS (wool) mean the brand signed up to welfare standards.\n\nEven in Dubai, where you'll never need a down jacket outdoors, the malls are full of them for ski trips and travel — the label is the only way to know what's inside.\n\nSo tonight, pick five items from your wardrobe and play detective. If a label leaves you guessing, the Rewoven app lets you scan it and see the brand's Animal Welfare grade alongside its Environmental, Labor and Transparency scores. Knowing what you're wearing is step one — every later lesson builds on it."
+        }
+      ],
+      key_takeaways: [
+        "Most leather is a co-product of the meat and dairy industries, but exotic skins like crocodile usually aren't.",
+        "Conventional silk is made by boiling cocoons with the pupa still inside, so the single thread stays unbroken.",
+        "Cheap cashmere came with a hidden cost: millions more goats overgrazing Mongolia's fragile grasslands.",
+        "Fur is the only material here farmed purely for fashion — and it's banned or being phased out in a growing list of countries.",
+        "The fibre label sewn into every garment tells you exactly which animal materials you're wearing."
+      ],
+      activities: [
+        %{
+          title: "Wardrobe Safari",
+          description:
+            "Pick ten items from your wardrobe and read every fibre label you can find. Tally how many contain animal materials — wool, silk, leather, down, cashmere — and how many contain none at all. Were you surprised by what you found, or by what you didn't?"
+        },
+        %{
+          title: "The Dinner-Table Materials Quiz",
+          description:
+            "Quiz your family or friends over dinner: where does silk come from? What animal makes cashmere? Is leather always a by-product? Keep score, then reveal the answers from this lesson. Notice which fact surprises people most — it's almost always the silkworms."
+        },
+        %{
+          title: "Material World Map",
+          description:
+            "Sketch a rough world map on paper and mark where each material mostly comes from: wool in Australia, silk in China and India, cashmere in Mongolia and China. Then add your own city and trace how far each material travelled to reach the shops near you."
+        }
+      ],
+      end_question: %{
+        prompt:
+          "In conventional silk production, why are the cocoons boiled with the pupa still inside?",
+        options: [
+          "To give the silk its shiny finish",
+          "To keep the cocoon's single thread in one long, unbroken filament",
+          "Because silkworms find warm water relaxing",
+          "To make the silk stronger by cooking it"
+        ],
+        correct: 1,
+        explanation:
+          "If the moth were allowed to emerge, it would chew a hole through the cocoon and snap the single continuous thread into short pieces. Boiling first keeps that filament — which can run for hundreds of metres — intact. 'Peace silk' lets the moth out first, but the fibres are shorter and the fabric costs more."
+      }
+    },
+    {"animals-and-fashion", "leather-and-fur"} => %{
+      intro:
+        "Your school shoes, that belt in your wardrobe, maybe the seats in your family's car — leather is everywhere, and so is the chemistry that made it. Today we're following a hide from the farm to the tannery to find out what the journey really costs. 🧪",
+      sections: [
+        %{
+          heading: "The Chemistry Hiding in Your Leather Jacket",
+          body:
+            "Raw animal hide has a problem: it's skin, and skin rots. Tanning is the ancient fix — a chemical process that permanently changes the proteins in a hide so it becomes durable, flexible leather instead of something decomposing in your wardrobe.\n\nFor thousands of years, humans tanned hides slowly using tannins — bitter plant compounds found in tree bark, leaves, and pods. Then, in the 1800s, chemists discovered that chromium salts could do the same job dramatically faster. Today, an estimated 85-90% of the world's leather is chrome-tanned. A hide that would take weeks or months in a pit of oak bark can be chrome-tanned in about a day, and the result is soft, stretchy, and water-resistant.\n\nHere's the catch. Chrome tanning uses chromium(III), which is fairly harmless on its own. But under the wrong conditions — heat, the wrong acidity — it can convert into chromium(VI), a proven carcinogen. Well-run tanneries manage this carefully and treat their wastewater. Badly run ones don't.\n\nVegetable tanning still exists, making up roughly 10% of leather. It's slower and pricier, and it's prized for quality belts and bags — but its waste is far less toxic."
+        },
+        %{
+          heading: "Hazaribagh and Kanpur: When It Goes Wrong",
+          body:
+            "For decades, the Hazaribagh district of Dhaka, Bangladesh, packed around 150 tanneries into one crowded neighbourhood. A 2012 Human Rights Watch report called 'Toxic Tanneries' documented workers — including children — handling chromium and acids without gloves or masks, and suffering skin diseases and breathing problems. The tanneries pumped roughly 21,000 cubic metres of untreated wastewater into the Buriganga River every single day. In 2013, the Blacksmith Institute (an environmental group now called Pure Earth) ranked Hazaribagh among the most polluted places on Earth.\n\nBangladesh finally relocated the tanneries to a new industrial zone at Savar in 2017 — though journalists have reported that the new site's water treatment has struggled too.\n\nKanpur, in India, tells a similar story. Hundreds of tanneries there sit along the Ganges, a river sacred to over a billion people. Studies have found chromium in the local groundwater at levels far above safety limits, and farmland irrigated with tannery wastewater.\n\nNone of this means leather is evil. It means the price tag on a cheap leather item sometimes doesn't include the full bill — and someone living downstream is paying the rest."
+        },
+        %{
+          heading: "Fur Falls — and the Vegan Leather Puzzle",
+          body:
+            "Fur has had one of the fastest falls from grace in fashion history. Most fur doesn't come from the wild; it comes from farms where mink and foxes live in small wire cages. That reality, made visible by decades of campaigning, gradually turned the public — and then the law.\n\nThe UK passed a ban on fur farming in 2000, and the last farms closed by early 2003. Since then, roughly 20 European countries have banned it or begun phasing it out. In 2020, Denmark — then the world's biggest mink producer — culled its entire farmed mink population, estimated at 15-17 million animals, after COVID-19 spread through the farms. In 2021, Israel became the first country to ban fur sales altogether.\n\nFashion followed: Gucci went fur-free in 2017, Chanel dropped fur and exotic skins in 2018, Prada in 2019.\n\nSo should leather go the same way? Honestly — it's complicated. Most 'vegan leather' is polyurethane, a fossil-fuel plastic that never biodegrades. Real leather is mostly a co-product of the meat industry, though cattle ranching is a leading driver of Amazon deforestation. Newer plant-based materials made from cactus, pineapple, or mushrooms are promising, but often still contain plastic binders. There's no perfect option — only trade-offs."
+        },
+        %{
+          heading: "What a Thoughtful Shopper Can Actually Do",
+          body:
+            "You don't need to fix tannery chemistry from your bedroom. But you have more power here than you might think.\n\nFirst: second-hand leather is arguably the most sustainable leather there is. The animal impact and tanning pollution happened years ago — buying used doesn't fund more of it, and leather is one of the few materials that genuinely improves with age. WRAP, a UK waste research group, has estimated that keeping clothes in use just nine months longer cuts their carbon, water, and waste footprints by around 20-30%.\n\nSecond: if you're buying new, check the claims. 'Vegetable-tanned' and 'chrome-free' actually mean something, and the Leather Working Group audits tanneries on their environmental practices. If you're using the Rewoven app, the Animal Welfare and Environmental grades do some of that digging for you when you scan a label.\n\nThird: care for what you own. Keep leather dry, condition it occasionally, and get shoes resoled instead of binned — a good leather jacket can outlast your phone by twenty years. And a local twist: the UAE makes leather too. Abu Dhabi is home to a tannery that specialises in camel hides."
+        }
+      ],
+      key_takeaways: [
+        "Around 85-90% of the world's leather is chrome-tanned because it's fast and cheap — but poorly run tanneries can release toxic chromium into rivers and groundwater.",
+        "Hazaribagh in Dhaka and the Kanpur tanneries on the Ganges are documented cases of tannery pollution harming workers and whole communities.",
+        "Fur farming is collapsing: roughly 20 European countries have banned it, and houses like Gucci, Chanel, and Prada have gone fur-free.",
+        "'Vegan leather' is usually polyurethane plastic, so it isn't automatically the greener choice — every material comes with trade-offs.",
+        "The most sustainable leather is usually second-hand leather that's cared for well enough to last decades."
+      ],
+      activities: [
+        %{
+          title: "The Home Leather Census",
+          description:
+            "Walk through your home and count every leather item you can find — shoes, belts, bags, wallets, maybe a sofa. Note roughly how old each one is and what condition it's in. You'll probably notice the oldest items are holding up surprisingly well for their age. That durability is leather's superpower, and it's central to this whole debate."
+        },
+        %{
+          title: "The Oldest Item Interview",
+          description:
+            "Ask a parent or grandparent to show you the oldest leather item they own and tell you its story — where they got it, what it's survived, whether it's ever been repaired. Then ask what they think about fur, and whether their opinion has changed over their lifetime. Compare their answers with your own views and see where you land differently."
+        },
+        %{
+          title: "Vegan Leather Detective",
+          description:
+            "Pick any online clothing store and find a product labelled 'vegan leather.' Dig through the description and materials list to work out what it's actually made of — polyurethane, PVC, or a plant-based blend. Then find a real-leather product and check whether it says anything at all about how it was tanned. Notice how hard honest information is to find."
+        }
+      ],
+      end_question: %{
+        prompt: "Most 'vegan leather' sold today is actually made of what?",
+        options: [
+          "Pineapple leaf fibres",
+          "Polyurethane, a fossil-fuel plastic",
+          "Compressed mushroom roots",
+          "Extremely determined tofu"
+        ],
+        correct: 1,
+        explanation:
+          "The vast majority of vegan leather on the market is polyurethane (PU) or sometimes PVC — plastics made from fossil fuels that don't biodegrade and often wear out faster than real leather. Plant-based options made from pineapple leaves, cactus, or mushroom mycelium do exist and are genuinely exciting, but they're still rare and usually contain plastic binders too."
+      }
+    },
+    {"animals-and-fashion", "wool-down-silk"} => %{
+      intro:
+        "Wool, down, and silk all come from animals — so are they the ethical choice, or the ones to avoid? The honest answer is \"it depends\", and learning to read that grey zone is a genuine superpower. 🐑",
+      sections: [
+        %{
+          heading: "Wool: The Renewable Fibre With a Catch",
+          body:
+            "Wool has a genuinely great resume. Sheep regrow their fleece every year, so it's renewable in a way oil-based polyester never will be. It's durable, naturally warm even when damp, and when a wool jumper finally wears out, it biodegrades in soil within a few years — synthetics can hang around for decades.\n\nSo what's the catch? It's called mulesing. In Australia, which grows most of the world's fine merino wool, some farmers remove strips of skin from around a lamb's rear to prevent flystrike, a painful parasite infection. It works, but it's often done without pain relief, and animal welfare groups have campaigned against it for years. New Zealand banned the practice in 2018, and a growing number of Australian farmers have moved away from it too.\n\nThis is where certifications come in. The Responsible Wool Standard (RWS), run by a nonprofit called Textile Exchange, bans mulesing entirely and audits how farms treat both their sheep and their land. So when a label says 'mulesing-free', it's making a specific, checkable claim — not just a cosy-sounding vibe. That pattern — a claim you can actually verify — is the theme of this whole lesson."
+        },
+        %{
+          heading: "Down: Warmth With Questions Attached",
+          body:
+            "Down — the fluffy under-layer of feathers from ducks and geese — is still one of the best insulators we know, gram for gram. Even if you live somewhere hot like Dubai, you've probably got a puffer jacket for winter travel, freezing classrooms, or a trip to Ski Dubai. Almost all of that fluff comes from birds.\n\nThe welfare concerns are real. Most down is a by-product of the meat industry, but two practices trouble campaigners most: live-plucking, where feathers are pulled from birds that are still alive, and force-feeding, used on some farms that also produce foie gras, a fattened-liver dish. Neither is universal — but without checks, a shopper has no way to tell which jacket came from where.\n\nThat's exactly why the Responsible Down Standard (RDS) exists. It bans both practices and follows the down through every step from farm to finished jacket — a system called chain of custody. The outdoor brand The North Face helped launch it in 2014, and a stricter cousin, the Global Traceable Down Standard, digs even deeper into parent farms.\n\nSo the takeaway isn't 'down is evil' or 'down is fine'. Down is a gradient — with a checkable standard marking the better end."
+        },
+        %{
+          heading: "Silk, Peace Silk, and the Recycled Wildcard",
+          body:
+            "Here's the fact that surprises most people: conventional silk is made by boiling silkworm cocoons with the pupa still inside, because letting the moth chew its way out would snap the single long thread. It takes thousands of cocoons to make one kilogram of silk, so the numbers add up quickly.\n\nThe alternative is called peace silk, or Ahimsa silk — 'ahimsa' is a Sanskrit word meaning non-violence. Developed in India, it waits for the moth to emerge naturally before the cocoon is spun. The trade-offs: the broken threads make a slightly rougher, pricier fabric, and there's no single global certification yet, so claims are harder to verify than RWS or RDS.\n\nMeanwhile, the quiet overachiever of this lesson is recycled wool. The town of Prato in Italy has been shredding old wool garments and re-spinning them into new fabric for well over a century. No new sheep, no new farming impacts, and the fibre keeps its warmth. The Global Recycled Standard (GRS), also run by Textile Exchange, certifies it.\n\nNotice what keeps happening: every fibre sits on a slider, not a switch. Your job isn't to memorise verdicts — it's to know which questions to ask."
+        },
+        %{
+          heading: "Your Screenshot-This Cheat-Sheet",
+          body:
+            "Time to make this practical. Screenshot this list — it fits on one phone screen:\n\n- RWS (Responsible Wool Standard): no mulesing, plus animal welfare and land checks\n- 'Mulesing-free': a narrower claim, but specific and checkable\n- RDS (Responsible Down Standard): no live-plucking, no force-feeding, tracked farm to jacket\n- Global Traceable Down Standard: like RDS, stricter on parent farms\n- Peace / Ahimsa silk: the moth emerges before the cocoon is processed (no unified certification yet — ask the brand directly)\n- GRS (Global Recycled Standard): certifies recycled wool and other recycled fibres\n\nNext time you're shopping — Dubai Mall, a thrift store, online — flip to the label and hunt for these names. If a brand claims 'ethical wool' with no standard behind it, that's your cue to ask. Brands answer messages from customers more often than you'd expect, and 'Is your down RDS-certified?' is a devastatingly good question coming from a teenager.\n\nIf you use the Rewoven app, this is exactly what the Animal Welfare grade summarises — whether a brand backs its claims with standards like these. You don't have to be perfect. You just have to be the person who knows the difference between a promise and a proof."
+        }
+      ],
+      key_takeaways: [
+        "Wool is renewable and biodegradable, but mulesing is a real welfare issue — the RWS and 'mulesing-free' labels exist to address it.",
+        "The Responsible Down Standard bans live-plucking and force-feeding, and tracks down from farm to finished jacket.",
+        "Conventional silk boils the silkworm inside its cocoon; peace (Ahimsa) silk lets the moth emerge first.",
+        "Recycled wool gives you wool's warmth with no new farming impacts — it's one of fashion's most underrated materials.",
+        "Animal fibres aren't good or bad — they sit on gradients, and certifications are how you check where a product falls."
+      ],
+      activities: [
+        %{
+          title: "Label Safari",
+          description:
+            "Go through your family's wardrobe and find one wool, one down, and one silk item (or as many as exist). Check every label and tag for RWS, RDS, GRS, or 'mulesing-free'. Tally what you find — most people are surprised how few items carry any standard at all."
+        },
+        %{
+          title: "The Dinner-Table Gradient",
+          description:
+            "Draw a line on paper from 'most concerning' to 'most responsible' and ask your family to place conventional wool, RWS wool, recycled wool, regular down, RDS down, conventional silk, and peace silk along it. Compare where everyone put things and debate the disagreements. There's no perfect answer — the conversation is the point."
+        },
+        %{
+          title: "One Question to a Brand",
+          description:
+            "Pick a brand you or a friend actually buys and send them one polite message: 'Is your down RDS-certified?' or 'Is your merino mulesing-free?'. Compare replies with classmates a week later. A clear answer, a vague answer, and silence each tell you something different."
+        }
+      ],
+      end_question: %{
+        prompt: "A jacket label says 'RDS-certified down'. What does that actually guarantee?",
+        options: [
+          "The down came from birds that were not live-plucked or force-fed, and was tracked through the supply chain",
+          "The down is 100% recycled from old duvets and pillows",
+          "The jacket is warmer than any synthetic alternative on the market",
+          "The ducks personally signed off on the arrangement"
+        ],
+        correct: 0,
+        explanation:
+          "The Responsible Down Standard bans live-plucking and force-feeding, and uses chain-of-custody checks so certified down can be traced from farm to finished product. It says nothing about recycled content or warmth — those are separate claims covered by different labels, which is exactly why knowing your certifications matters."
+      }
+    },
+    {"animals-and-fashion", "vegan-fashion"} => %{
+      intro:
+        "Quick pop quiz: what's \"vegan leather\" actually made of? If your answer was \"plants, probably?\" — this lesson has a plot twist for you. 🌵",
+      sections: [
+        %{
+          heading: "The Plastic Twist",
+          body:
+            "Here's the twist nobody prints on the tag: most \"vegan leather\" is plastic. Usually it's polyurethane (PU) or PVC — materials made from fossil fuels, engineered to look and feel like animal hide.\n\nWhy does that matter? Plastic doesn't biodegrade. It breaks into smaller and smaller fragments called microplastics, which researchers have now found everywhere from Arctic ice to the fish on our plates. And PVC is a particular problem — Greenpeace has campaigned against it for decades because of the toxic chemicals involved in making it and the additives needed to keep it soft.\n\nPU is the gentler of the two, but it has its own weakness: it doesn't last. That thin PU coating slowly reacts with heat and moisture, then cracks and peels — you've probably seen a bag or a pair of shoes \"shedding\" like this. In a hot, humid climate like the UAE's, that breakdown can come even faster.\n\nSo here's the uncomfortable maths: a vegan bag that falls apart in a year and then sits in landfill for centuries can end up worse for the planet than the leather one it replaced. \"Vegan\" tells you no animal was used. It tells you nothing else."
+        },
+        %{
+          heading: "The Materials That Actually Excite Scientists",
+          body:
+            "Now for the genuinely exciting part — because scientists really are racing to build leather without cows or crude oil.\n\nMycelium leather is grown from the root-like structure of fungi, and it can be produced in weeks rather than the years it takes to raise cattle. Bolt Threads' version, Mylo, appeared in prototypes from Stella McCartney and Adidas — though the company paused production in 2023 while searching for funding. That tells you something honest: this technology is real, but young.\n\nDesserto, from Mexico, makes leather from nopal cactus, a plant that thrives on very little water. Piñatex, invented by Dr Carmen Hijosa, uses fibre from pineapple leaves that farmers in the Philippines would otherwise burn — and pays them for what used to be waste. Apple leather from Italy is built on leftover pulp from the juice industry, and companies like VitroLabs are even growing real leather from animal cells, no animal required.\n\nOne honest catch before you get too excited: most of these materials are still blended with plastic — often PU — to make them strong and waterproof. So a \"cactus leather\" bag might be roughly half plastic. Better than pure PU? Usually. Perfect? Not yet."
+        },
+        %{
+          heading: "How \"Vegan\" Becomes a Greenwashing Halo",
+          body:
+            "Remember the greenwashing lesson from the Fashion course? \"Vegan\" has become one of marketing's favourite halo words. It sounds ethical, natural, planet-friendly — and it can be technically true even when the product is 100% fossil-fuel plastic.\n\nWatch for these three moves:\n\n1. The vague eco-name: \"eco-leather\" or \"plant-based\" with no percentage. If a bag is 30% cactus and 70% PU, honest brands say so.\n2. The single-issue spotlight: shouting \"vegan!\" while staying silent on where the product was made, by whom, and from what.\n3. Vibes as evidence: leaf logos, earth tones, and the word \"conscious\" prove nothing on their own.\n\nGenuine claims are specific and checkable. The UK's Competition and Markets Authority even publishes a Green Claims Code telling companies exactly that: environmental claims must be truthful, clear, and backed by evidence. A brand page with material breakdowns and named certifications is a good sign; a lone cactus photo is not.\n\nThis is also where tools earn their keep — the Rewoven app lets you scan a clothing label and see a brand's Environmental and Animal Welfare grades side by side, which is exactly the comparison that \"vegan\" marketing hopes you'll never make."
+        },
+        %{
+          heading: "What You Can Do: Three Questions Beat One Label",
+          body:
+            "You don't need to memorise every material ever invented. You just need three questions.\n\n1. What is it, really? Flip the label. \"Polyurethane\", \"PU\", or \"synthetic\" means plastic. \"Cactus\" or \"pineapple\"? Great — now find the percentage. A brand that answers plainly has earned some trust.\n\n2. How long will it last? Research by WRAP (a UK waste-reduction charity) found that extending the active life of clothes by just nine months would cut their carbon, water, and waste footprints by around 20-30% each. The most sustainable item is usually the one you're still wearing in five years — whatever it's made of.\n\n3. Where does it go when you're done? Can it be repaired, resold, or handed down to a cousin? Or is it destined for landfill by next summer?\n\nTry it next time you're in a mall — Dubai has no shortage of those — and you spot a \"vegan leather\" tag. Run the three questions. Sometimes the vegan option wins. Sometimes a second-hand real-leather jacket wins. The point is that you decided — not the label."
+        }
+      ],
+      key_takeaways: [
+        "Most \"vegan leather\" is polyurethane or PVC — plastic made from fossil fuels that sheds microplastics and doesn't biodegrade.",
+        "\"Vegan\" only tells you no animal was used; it says nothing about whether a product is sustainable.",
+        "Mushroom, cactus, pineapple, and apple leathers are real and promising, but still early-stage and usually blended with plastic.",
+        "An item that lasts for years usually beats a \"greener\" one that falls apart in months.",
+        "Judge any material with three questions: what is it made of, how long will it last, and where does it go when you're done?"
+      ],
+      activities: [
+        %{
+          title: "The Wardrobe Plastic Hunt",
+          description:
+            "Check the labels or the small print inside shoes, bags, belts, and jackets at home. Tally how many \"leather-look\" items are actually PU, PVC, or \"synthetic/man-made materials\". Most people are surprised by their score — compare notes with a classmate tomorrow."
+        },
+        %{
+          title: "The Dinner-Table Leather Debate",
+          description:
+            "Ask your family or friends a simple question over dinner: which is better for the planet, real leather or vegan leather? Let everyone commit to an answer before you reveal the plastic twist from this lesson. Then walk them through the three questions — material, longevity, end-of-life — and see if anyone changes their mind."
+        },
+        %{
+          title: "Invent Your Own Next-Gen Leather",
+          description:
+            "Desserto started with a cactus; Piñatex started with pineapple leaves nobody wanted. Pick a food waste that's common where you live — date seeds, orange peels, coffee grounds — and sketch a leather alternative made from it, with a name and a one-line pitch. Then stress-test your invention with the framework: what's it made of, how long would it last, and what happens when someone's done with it?"
+        }
+      ],
+      end_question: %{
+        prompt:
+          "A jacket label proudly says \"100% vegan leather\". What is it most likely made of?",
+        options: [
+          "Mycelium grown from mushroom roots",
+          "Polyurethane (PU) — a plastic made from fossil fuels",
+          "Compressed cactus and pineapple fibres",
+          "Ethically sourced broccoli"
+        ],
+        correct: 1,
+        explanation:
+          "Next-gen materials like mycelium and cactus leather are real, but they're still a tiny slice of the market — most \"vegan leather\" sold today is PU or PVC plastic. That's why \"vegan\" alone can't tell you whether something is sustainable; you still need to ask what it's made of, how long it will last, and where it ends up."
       }
     }
   }

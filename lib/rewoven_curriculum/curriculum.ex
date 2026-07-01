@@ -2,9 +2,10 @@ defmodule RewovenCurriculum.Curriculum do
   @moduledoc """
   In-memory content store for the Rewoven Curriculum.
 
-  6 courses × 4 lessons = 24 lessons. Each lesson has reading material,
-  3 activities, and an end-of-lesson question pulled from the same bank
-  the quiz uses (144 questions across the same 6 categories).
+  8 courses × 4 lessons = 32 lessons. Each lesson has reading material,
+  3 activities, and an end-of-lesson multiple-choice question. The original
+  6 courses share their question themes with the quiz's 144-question bank;
+  the two newer courses (labour, animal welfare) have their own questions.
 
   Content is hardcoded module attributes — no database. Add/edit lessons
   by editing this file and redeploying.
@@ -40,7 +41,8 @@ defmodule RewovenCurriculum.Curriculum do
           slug: "design-for-circularity",
           title: "Design for Circularity",
           duration: "12 min",
-          summary: "Why the next 50 years of design start with one question: what happens when this product dies?"
+          summary:
+            "Why the next 50 years of design start with one question: what happens when this product dies?"
         }
       ]
     },
@@ -61,7 +63,8 @@ defmodule RewovenCurriculum.Curriculum do
           slug: "microplastics-and-polyester",
           title: "Microplastics & Polyester",
           duration: "11 min",
-          summary: "Why washing your hoodie sheds plastic into the ocean — and what to do about it."
+          summary:
+            "Why washing your hoodie sheds plastic into the ocean — and what to do about it."
         },
         %{
           slug: "cost-per-wear",
@@ -73,7 +76,8 @@ defmodule RewovenCurriculum.Curriculum do
           slug: "spotting-greenwashing",
           title: "Spotting Greenwashing",
           duration: "13 min",
-          summary: "10 red flags every shopper should know — and why \"eco-friendly\" alone means nothing."
+          summary:
+            "10 red flags every shopper should know — and why \"eco-friendly\" alone means nothing."
         }
       ]
     },
@@ -81,7 +85,8 @@ defmodule RewovenCurriculum.Curriculum do
       slug: "textile-lifecycle",
       title: "Textile Lifecycle",
       emoji: "🧵",
-      tagline: "Follow a t-shirt from cotton field to landfill — and learn how to break the cycle.",
+      tagline:
+        "Follow a t-shirt from cotton field to landfill — and learn how to break the cycle.",
       color: "#F59E0B",
       lessons: [
         %{
@@ -94,19 +99,22 @@ defmodule RewovenCurriculum.Curriculum do
           slug: "why-blends-cant-be-recycled",
           title: "Why Blends Can't Be Recycled",
           duration: "10 min",
-          summary: "Why a 50/50 cotton-polyester shirt is a recycling nightmare — and a chemistry lesson."
+          summary:
+            "Why a 50/50 cotton-polyester shirt is a recycling nightmare — and a chemistry lesson."
         },
         %{
           slug: "water-footprint",
           title: "Your T-Shirt's Water Footprint",
           duration: "11 min",
-          summary: "It takes 2,700 litres of water to grow the cotton for one shirt. Why? And what about linen?"
+          summary:
+            "It takes 2,700 litres of water to grow the cotton for one shirt. Why? And what about linen?"
         },
         %{
           slug: "lifecycle-lab",
           title: "Lifecycle Lab",
           duration: "15 min",
-          summary: "Compare 4 garments side-by-side — cotton tee, polyester hoodie, linen shirt, recycled fleece."
+          summary:
+            "Compare 4 garments side-by-side — cotton tee, polyester hoodie, linen shirt, recycled fleece."
         }
       ]
     },
@@ -127,19 +135,22 @@ defmodule RewovenCurriculum.Curriculum do
           slug: "supply-chain-transparency",
           title: "Supply Chain Transparency",
           duration: "11 min",
-          summary: "Why \"Made in Italy\" can hide 6 countries of work — and how to find out where your clothes really come from."
+          summary:
+            "Why \"Made in Italy\" can hide 6 countries of work — and how to find out where your clothes really come from."
         },
         %{
           slug: "impact-reports",
           title: "Reading Impact Reports",
           duration: "12 min",
-          summary: "How to spot the difference between real progress and PR fluff in a brand's annual report."
+          summary:
+            "How to spot the difference between real progress and PR fluff in a brand's annual report."
         },
         %{
           slug: "brand-audit-project",
           title: "Brand Audit Project",
           duration: "20 min",
-          summary: "Pick a brand and grade it yourself using the same framework Rewoven uses for its 500-brand database."
+          summary:
+            "Pick a brand and grade it yourself using the same framework Rewoven uses for its 500-brand database."
         }
       ]
     },
@@ -147,32 +158,37 @@ defmodule RewovenCurriculum.Curriculum do
       slug: "recycling",
       title: "Recycling",
       emoji: "🔄",
-      tagline: "Why textile recycling is harder than plastic — and the breakthroughs coming next.",
+      tagline:
+        "Why textile recycling is harder than plastic — and the breakthroughs coming next.",
       color: "#06B6D4",
       lessons: [
         %{
           slug: "mechanical-vs-chemical",
           title: "Mechanical vs Chemical",
           duration: "11 min",
-          summary: "Two ways to recycle clothes, and why one shortens fibres while the other dissolves them."
+          summary:
+            "Two ways to recycle clothes, and why one shortens fibres while the other dissolves them."
         },
         %{
           slug: "sorting-problems",
           title: "Sorting Problems",
           duration: "10 min",
-          summary: "Why most clothes you donate end up in landfill anyway — and what's being done."
+          summary:
+            "Why most clothes you donate end up in landfill anyway — and what's being done."
         },
         %{
           slug: "fibre-shortening",
           title: "Fibre Shortening",
           duration: "9 min",
-          summary: "Each recycle round makes the fibre weaker. The science of why recycled cotton is usually 20% recycled, not 100%."
+          summary:
+            "Each recycle round makes the fibre weaker. The science of why recycled cotton is usually 20% recycled, not 100%."
         },
         %{
           slug: "design-a-recycling-system",
           title: "Design a Recycling System",
           duration: "16 min",
-          summary: "Pick a city, design its textile recycling pipeline — collection, sorting, processing, output."
+          summary:
+            "Pick a city, design its textile recycling pipeline — collection, sorting, processing, output."
         }
       ]
     },
@@ -187,7 +203,8 @@ defmodule RewovenCurriculum.Curriculum do
           slug: "wardrobe-audit",
           title: "Your Wardrobe Audit",
           duration: "15 min",
-          summary: "Count what you own. Find what you wear. Spot the gap. (It's bigger than you think.)"
+          summary:
+            "Count what you own. Find what you wear. Spot the gap. (It's bigger than you think.)"
         },
         %{
           slug: "swap-donate-upcycle",
@@ -205,7 +222,81 @@ defmodule RewovenCurriculum.Curriculum do
           slug: "thirty-day-challenge",
           title: "30-Day Challenge",
           duration: "30 days",
-          summary: "A printable calendar with one sustainability action a day. Teachers love this one."
+          summary:
+            "A printable calendar with one sustainability action a day. Teachers love this one."
+        }
+      ]
+    },
+    %{
+      slug: "people-behind-clothes",
+      title: "The People Behind Our Clothes",
+      emoji: "🧑‍🏭",
+      tagline: "Around 60 million hands make our clothes — meet them.",
+      color: "#F97316",
+      lessons: [
+        %{
+          slug: "who-made-my-clothes",
+          title: "Who Made My Clothes?",
+          duration: "12 min",
+          summary:
+            "The invisible workforce behind every t-shirt — and why most of them are young women."
+        },
+        %{
+          slug: "true-cost-of-cheap",
+          title: "The True Cost of Cheap",
+          duration: "11 min",
+          summary: "Split open the price tag of a $10 tee and find out who actually gets what."
+        },
+        %{
+          slug: "rana-plaza",
+          title: "Rana Plaza: The Day Fashion Changed",
+          duration: "13 min",
+          summary:
+            "The 2013 factory collapse that forced the industry to look at itself — and what changed."
+        },
+        %{
+          slug: "reading-labor-scores",
+          title: "Reading a Brand's Labour Score",
+          duration: "10 min",
+          summary:
+            "Fair Trade, SA8000, Fair Wear — decode the labels and scores that actually mean something."
+        }
+      ]
+    },
+    %{
+      slug: "animals-and-fashion",
+      title: "Animals & Fashion",
+      emoji: "🐑",
+      tagline:
+        "Wool, leather, silk, down — what fashion takes from animals, and kinder ways to make it.",
+      color: "#3B82F6",
+      lessons: [
+        %{
+          slug: "materials-from-animals",
+          title: "Materials from Animals",
+          duration: "12 min",
+          summary: "Leather, wool, silk, down, cashmere, fur — where each one really comes from."
+        },
+        %{
+          slug: "leather-and-fur",
+          title: "Leather & Fur: The Hidden Cost",
+          duration: "12 min",
+          summary:
+            "Tannery chemistry, fur farm bans, and why the leather question is harder than it looks."
+        },
+        %{
+          slug: "wool-down-silk",
+          title: "Wool, Down & Silk: Better or Not?",
+          duration: "11 min",
+          summary:
+            "Gradients, not binaries — the welfare standards that separate better from worse."
+        },
+        %{
+          slug: "vegan-fashion",
+          title: "Vegan Fashion: Hype vs Reality",
+          duration: "12 min",
+          summary:
+            "Why 'vegan leather' is usually plastic — and the mushroom and cactus materials that aren't."
         }
       ]
     }
@@ -217,7 +308,9 @@ defmodule RewovenCurriculum.Curriculum do
 
   def lesson(course_slug, lesson_slug) do
     case course(course_slug) do
-      nil -> nil
+      nil ->
+        nil
+
       course ->
         lesson = Enum.find(course.lessons, &(&1.slug == lesson_slug))
         if lesson, do: Map.put(lesson, :course, course)
@@ -227,9 +320,12 @@ defmodule RewovenCurriculum.Curriculum do
   @doc "Returns {prev, next} sibling lessons within the same course."
   def siblings(course_slug, lesson_slug) do
     case course(course_slug) do
-      nil -> {nil, nil}
+      nil ->
+        {nil, nil}
+
       course ->
         idx = Enum.find_index(course.lessons, &(&1.slug == lesson_slug))
+
         {Enum.at(course.lessons, idx - 1, nil) |> if_negative_idx(idx),
          Enum.at(course.lessons, idx + 1)}
     end

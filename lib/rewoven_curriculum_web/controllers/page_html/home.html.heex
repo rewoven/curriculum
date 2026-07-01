@@ -2,7 +2,9 @@
   <section class="hero">
     <div class="container">
       <h1>The Rewoven <span class="highlight">Curriculum</span></h1>
-      <p>Six full courses on circular economy, fast fashion, recycling, and more.</p>
+      <p>
+        Eight full courses on circular economy, fast fashion, the people who make our clothes, and more.
+      </p>
       <div class="hero-stat">
         <span>{length(@courses)} courses</span>
         <span>{@total_lessons} lessons</span>
@@ -15,7 +17,11 @@
     <div class="container">
       <div class="courses-grid">
         <%= for course <- @courses do %>
-          <a href={"/courses/" <> course.slug} class="course-card" style={"border-top: 4px solid " <> course.color}>
+          <a
+            href={"/courses/" <> course.slug}
+            class="course-card"
+            style={"border-top: 4px solid " <> course.color}
+          >
             <div class="course-emoji">{course.emoji}</div>
             <div class="course-title">{course.title}</div>
             <p class="course-tag">{course.tagline}</p>

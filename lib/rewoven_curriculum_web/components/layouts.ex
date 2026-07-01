@@ -44,7 +44,10 @@ defmodule RewovenCurriculumWeb.Layouts do
 
     <footer>
       <div class="container">
-        <p>A <a href="https://rewovenapp.com">Rewoven</a> service · <a href="https://premium.rewovenapp.com/account">Manage subscription</a></p>
+        <p>
+          A <a href="https://rewovenapp.com">Rewoven</a>
+          service · <a href="https://premium.rewovenapp.com/account">Manage subscription</a>
+        </p>
       </div>
     </footer>
     """

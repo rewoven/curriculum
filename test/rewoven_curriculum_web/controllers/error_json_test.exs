@@ -2,7 +2,9 @@ defmodule RewovenCurriculumWeb.ErrorJSONTest do
   use RewovenCurriculumWeb.ConnCase, async: true
 
   test "renders 404" do
-    assert RewovenCurriculumWeb.ErrorJSON.render("404.json", %{}) == %{errors: %{detail: "Not Found"}}
+    assert RewovenCurriculumWeb.ErrorJSON.render("404.json", %{}) == %{
+             errors: %{detail: "Not Found"}
+           }
   end
 
   test "renders 500" do

@@ -9,7 +9,8 @@ defmodule RewovenCurriculum.Application do
   def start(_type, _args) do
     children = [
       RewovenCurriculumWeb.Telemetry,
-      {DNSCluster, query: Application.get_env(:rewoven_curriculum, :dns_cluster_query) || :ignore},
+      {DNSCluster,
+       query: Application.get_env(:rewoven_curriculum, :dns_cluster_query) || :ignore},
       {Phoenix.PubSub, name: RewovenCurriculum.PubSub},
       # Start a worker by calling: RewovenCurriculum.Worker.start_link(arg)
       # {RewovenCurriculum.Worker, arg},

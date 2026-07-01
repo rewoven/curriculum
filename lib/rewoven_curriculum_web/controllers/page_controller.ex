@@ -3,7 +3,7 @@ defmodule RewovenCurriculumWeb.PageController do
 
   alias RewovenCurriculum.Curriculum
 
-  @doc "Public landing page — lists all 6 courses."
+  @doc "Public landing page — lists all 8 courses."
   def home(conn, _params) do
     render(conn, :home,
       courses: Curriculum.courses(),

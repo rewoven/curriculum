@@ -51,7 +51,9 @@ defmodule RewovenCurriculumWeb.Plugs.RequirePremium do
           {:ok, user} -> assign(conn, :current_user, user)
           _ -> conn
         end
-      _ -> conn
+
+      _ ->
+        conn
     end
   end
 
