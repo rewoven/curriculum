@@ -1,14 +1,17 @@
-<.curriculum_page user={assigns[:current_user]}>
+<.curriculum_page user={assigns[:current_user]} locale={@locale}>
   <section class="hero">
     <div class="container">
-      <h1>The Rewoven <span class="highlight">Curriculum</span></h1>
+      <h1>
+        {RewovenCurriculum.I18n.t(@locale, :hero_title_a)}
+        <span class="highlight">{RewovenCurriculum.I18n.t(@locale, :hero_title_b)}</span>
+      </h1>
       <p>
-        Eight full courses on circular economy, fast fashion, the people who make our clothes, and more.
+        {RewovenCurriculum.I18n.t(@locale, :hero_tagline)}
       </p>
       <div class="hero-stat">
-        <span>{length(@courses)} courses</span>
-        <span>{@total_lessons} lessons</span>
-        <span>$4.99/mo - free during soft launch</span>
+        <span>{length(@courses)} {RewovenCurriculum.I18n.t(@locale, :courses_word)}</span>
+        <span>{@total_lessons} {RewovenCurriculum.I18n.t(@locale, :lessons_word)}</span>
+        <span>{RewovenCurriculum.I18n.t(@locale, :pricing_note)}</span>
       </div>
     </div>
   </section>
@@ -26,9 +29,12 @@
             <div class="course-title">{course.title}</div>
             <p class="course-tag">{course.tagline}</p>
             <div class="course-meta">
-              <span><strong>{length(course.lessons)}</strong> lessons</span>
+              <span>
+                <strong>{length(course.lessons)}</strong>
+                {RewovenCurriculum.I18n.t(@locale, :lessons_word)}
+              </span>
               <span>·</span>
-              <span>End-of-lesson quizzes</span>
+              <span>{RewovenCurriculum.I18n.t(@locale, :end_of_lesson_quizzes)}</span>
             </div>
           </a>
         <% end %>

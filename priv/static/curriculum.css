@@ -254,3 +254,35 @@ footer a { color:var(--green-600); font-weight:600; }
   .lesson-page h1 { font-size:28px; }
   .course-header h1 { font-size:32px; }
 }
+
+/* ── Language switcher ── */
+.lang-select {
+  padding:6px 10px; border-radius:8px; border:1px solid var(--gray-200);
+  background:var(--white); color:var(--gray-600); font-size:14px;
+  font-family:inherit; cursor:pointer; outline:none;
+}
+.lang-select:focus { border-color:var(--green-500); }
+
+/* ── Lesson completion ── */
+.mark-complete {
+  padding:12px 28px; border-radius:50px; border:2px solid var(--green-200);
+  background:var(--white); color:var(--green-700); font-size:15px; font-weight:600;
+  font-family:inherit; cursor:pointer; transition:all .2s;
+}
+.mark-complete:hover { border-color:var(--green-500); }
+.mark-complete.done { background:var(--green-500); border-color:var(--green-500); color:#fff; }
+.lesson-num.done { background:var(--green-500); color:#fff; }
+
+/* ── RTL ── */
+[dir="rtl"] body { text-align:right; }
+[dir="rtl"] .lesson-row { direction:rtl; }
+[dir="rtl"] .course-meta { direction:rtl; }
+
+/* ── Print (teachers) ── */
+@media print {
+  nav, footer, .lesson-nav, .mark-complete, .complete-wrap, .lang-select { display:none !important; }
+  body { background:#fff; color:#000; }
+  .lesson-page { max-width:100%; padding:0; }
+  .q-explanation { display:block !important; opacity:1 !important; max-height:none !important; }
+  a { text-decoration:none; color:inherit; }
+}

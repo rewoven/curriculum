@@ -1,7 +1,9 @@
-<.curriculum_page user={assigns[:current_user]}>
+<.curriculum_page user={assigns[:current_user]} locale={@locale}>
   <section class="course-header">
     <div class="container">
-      <p class="crumbs"><a href="/">All courses</a> · {@course.title}</p>
+      <p class="crumbs">
+        <a href="/">{RewovenCurriculum.I18n.t(@locale, :all_courses)}</a> · {@course.title}
+      </p>
       <div class="course-emoji">{@course.emoji}</div>
       <h1>{@course.title}</h1>
       <p>{@course.tagline}</p>
@@ -10,7 +12,11 @@
 
   <section class="lessons-list">
     <%= for {lesson, idx} <- Enum.with_index(@course.lessons) do %>
-      <a href={"/courses/" <> @course.slug <> "/" <> lesson.slug} class="lesson-row">
+      <a
+        href={"/courses/" <> @course.slug <> "/" <> lesson.slug}
+        class="lesson-row"
+        data-lesson-key={@course.slug <> "/" <> lesson.slug}
+      >
         <div class="lesson-num">{idx + 1}</div>
         <div class="lesson-info">
           <div class="lesson-title">{lesson.title}</div>
@@ -20,4 +26,17 @@
       </a>
     <% end %>
   </section>
+
+  <script>
+    (() => {
+      let done = [];
+      try { done = JSON.parse(localStorage.getItem('rw-complete') || '[]'); } catch (_e) {}
+      document.querySelectorAll('.lesson-row[data-lesson-key]').forEach(row => {
+        if (done.includes(row.dataset.lessonKey)) {
+          const num = row.querySelector('.lesson-num');
+          if (num) { num.textContent = '✓'; num.classList.add('done'); }
+        }
+      });
+    })();
+  </script>
 </.curriculum_page>

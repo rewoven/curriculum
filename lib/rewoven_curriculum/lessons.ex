@@ -2003,10 +2003,18 @@ defmodule RewovenCurriculum.Lessons do
   @doc """
   Look up a lesson's full content by course slug and lesson slug.
 
-  Returns nil if the lesson doesn't exist.
+  Pass a locale to get translated content; falls back to English when the
+  translation is missing. Returns nil if the lesson doesn't exist.
   """
-  def content(course_slug, lesson_slug) do
+  def content(course_slug, lesson_slug, locale \\ "en")
+
+  def content(course_slug, lesson_slug, "en") do
     Map.get(@lessons, {course_slug, lesson_slug})
+  end
+
+  def content(course_slug, lesson_slug, locale) do
+    RewovenCurriculum.Content.lesson(locale, course_slug, lesson_slug) ||
+      content(course_slug, lesson_slug, "en")
   end
 
   @doc "Returns all lessons as a map keyed by {course_slug, lesson_slug}."

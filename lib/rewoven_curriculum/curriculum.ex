@@ -302,12 +302,26 @@ defmodule RewovenCurriculum.Curriculum do
     }
   ]
 
+  alias RewovenCurriculum.Content
+
   def courses, do: @courses
+
+  @doc "Courses with titles/taglines/lesson summaries translated for `locale` (English fallback)."
+  def courses(locale), do: Enum.map(@courses, &localize_course(&1, locale))
 
   def course(slug), do: Enum.find(@courses, &(&1.slug == slug))
 
-  def lesson(course_slug, lesson_slug) do
-    case course(course_slug) do
+  def course(slug, locale) do
+    case course(slug) do
+      nil -> nil
+      course -> localize_course(course, locale)
+    end
+  end
+
+  def lesson(course_slug, lesson_slug), do: lesson(course_slug, lesson_slug, "en")
+
+  def lesson(course_slug, lesson_slug, locale) do
+    case course(course_slug, locale) do
       nil ->
         nil
 
@@ -317,9 +331,31 @@ defmodule RewovenCurriculum.Curriculum do
     end
   end
 
+  defp localize_course(course, "en"), do: course
+
+  defp localize_course(course, locale) do
+    case Content.course_meta(locale, course.slug) do
+      nil ->
+        course
+
+      meta ->
+        lessons =
+          Enum.map(course.lessons, fn lesson ->
+            case get_in(meta, [:lessons, lesson.slug]) do
+              nil -> lesson
+              tr -> Map.merge(lesson, Map.take(tr, [:title, :summary]))
+            end
+          end)
+
+        course
+        |> Map.merge(Map.take(meta, [:title, :tagline]))
+        |> Map.put(:lessons, lessons)
+    end
+  end
+
   @doc "Returns {prev, next} sibling lessons within the same course."
-  def siblings(course_slug, lesson_slug) do
-    case course(course_slug) do
+  def siblings(course_slug, lesson_slug, locale \\ "en") do
+    case course(course_slug, locale) do
       nil ->
         {nil, nil}
 

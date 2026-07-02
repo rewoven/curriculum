@@ -1,7 +1,7 @@
-<.curriculum_page user={assigns[:current_user]}>
+<.curriculum_page user={assigns[:current_user]} locale={@locale}>
   <article class="lesson-page">
     <p class="crumbs">
-      <a href="/">Curriculum</a>
+      <a href="/">{RewovenCurriculum.I18n.t(@locale, :curriculum_word)}</a>
       · <a href={"/courses/" <> @lesson.course.slug}>{@lesson.course.title}</a>
     </p>
     <h1>{@lesson.title}</h1>
@@ -19,7 +19,7 @@
       <% end %>
 
       <div class="takeaways">
-        <h3>Key takeaways</h3>
+        <h3>{RewovenCurriculum.I18n.t(@locale, :key_takeaways)}</h3>
         <ul>
           <%= for t <- @content.key_takeaways do %>
             <li>{t}</li>
@@ -28,7 +28,7 @@
       </div>
 
       <h2 style="font-family:'Inter',sans-serif; font-size:22px; margin:36px 0 16px;">
-        Try this
+        {RewovenCurriculum.I18n.t(@locale, :try_this)}
       </h2>
       <%= for activity <- @content.activities do %>
         <div class="activity-card">
@@ -38,7 +38,7 @@
       <% end %>
 
       <div class="end-question" id="end-question">
-        <div class="label">End-of-lesson question</div>
+        <div class="label">{RewovenCurriculum.I18n.t(@locale, :end_question_label)}</div>
         <h3>{@content.end_question.prompt}</h3>
         <div class="q-options">
           <%= for {option, idx} <- Enum.with_index(@content.end_question.options) do %>
@@ -55,32 +55,45 @@
         </div>
         <p class="q-explanation" id="q-explanation">{@content.end_question.explanation}</p>
       </div>
+
+      <div class="complete-wrap" style="text-align:center; margin:32px 0 8px;">
+        <button
+          type="button"
+          id="mark-complete"
+          class="mark-complete"
+          data-lesson-key={@lesson.course.slug <> "/" <> @lesson.slug}
+          data-label-todo={RewovenCurriculum.I18n.t(@locale, :mark_complete)}
+          data-label-done={"✓ " <> RewovenCurriculum.I18n.t(@locale, :completed_label)}
+        >
+          {RewovenCurriculum.I18n.t(@locale, :mark_complete)}
+        </button>
+      </div>
     <% else %>
-      <p class="lesson-intro">This lesson is coming soon. Check back next week!</p>
+      <p class="lesson-intro">{RewovenCurriculum.I18n.t(@locale, :coming_soon)}</p>
     <% end %>
 
     <div class="lesson-nav">
       <%= if @prev do %>
         <a class="nav-arrow prev" href={"/courses/" <> @lesson.course.slug <> "/" <> @prev.slug}>
-          <div class="label">← Previous</div>
+          <div class="label">← {RewovenCurriculum.I18n.t(@locale, :previous_label)}</div>
           <div class="title">{@prev.title}</div>
         </a>
       <% else %>
         <div class="nav-arrow prev disabled">
-          <div class="label">← Previous</div>
-          <div class="title">Start of course</div>
+          <div class="label">← {RewovenCurriculum.I18n.t(@locale, :previous_label)}</div>
+          <div class="title">{RewovenCurriculum.I18n.t(@locale, :start_of_course)}</div>
         </div>
       <% end %>
 
       <%= if @next do %>
         <a class="nav-arrow next" href={"/courses/" <> @lesson.course.slug <> "/" <> @next.slug}>
-          <div class="label">Next →</div>
+          <div class="label">{RewovenCurriculum.I18n.t(@locale, :next_label)} →</div>
           <div class="title">{@next.title}</div>
         </a>
       <% else %>
         <a class="nav-arrow next" href={"/courses/" <> @lesson.course.slug}>
-          <div class="label">🏆 Course complete</div>
-          <div class="title">Back to course</div>
+          <div class="label">🏆 {RewovenCurriculum.I18n.t(@locale, :course_complete)}</div>
+          <div class="title">{RewovenCurriculum.I18n.t(@locale, :back_to_course)}</div>
         </a>
       <% end %>
     </div>
@@ -100,6 +113,24 @@
           }
           if (explanation) explanation.classList.add('show');
         });
+      });
+
+      const mark = document.getElementById('mark-complete');
+      if (!mark) return;
+      const key = mark.dataset.lessonKey;
+      const read = () => {
+        try { return JSON.parse(localStorage.getItem('rw-complete') || '[]'); } catch (_e) { return []; }
+      };
+      const paint = (done) => {
+        mark.textContent = done ? mark.dataset.labelDone : mark.dataset.labelTodo;
+        mark.classList.toggle('done', done);
+      };
+      paint(read().includes(key));
+      mark.addEventListener('click', () => {
+        let done = read();
+        if (done.includes(key)) { done = done.filter(k => k !== key); } else { done.push(key); }
+        try { localStorage.setItem('rw-complete', JSON.stringify(done)); } catch (_e) {}
+        paint(done.includes(key));
       });
     })();
   </script>

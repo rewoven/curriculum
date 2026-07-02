@@ -8,6 +8,7 @@ defmodule RewovenCurriculumWeb.Router do
     plug :put_root_layout, html: {RewovenCurriculumWeb.Layouts, :root}
     plug :protect_from_forgery
     plug :put_secure_browser_headers
+    plug RewovenCurriculumWeb.Plugs.SetLocale
   end
 
   # The index page is public (it advertises what's behind the paywall).
@@ -15,6 +16,7 @@ defmodule RewovenCurriculumWeb.Router do
     pipe_through :browser
 
     get "/", PageController, :home
+    get "/sitemap.xml", PageController, :sitemap
   end
 
   # Premium-only — server-side gate. Without a valid Supabase JWT cookie

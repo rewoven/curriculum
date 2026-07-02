@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang={assigns[:locale] || "en"} dir={assigns[:dir] || "ltr"}>
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -7,7 +7,7 @@
     <title>{assigns[:page_title] || "Rewoven Curriculum"}</title>
     <meta
       name="description"
-      content="Eight full sustainability courses for students — premium content for Rewoven subscribers."
+      content={RewovenCurriculum.I18n.t(assigns[:locale] || "en", :meta_description)}
     />
     <link rel="icon" href="https://rewovenapp.com/assets/logo.png" type="image/png" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
